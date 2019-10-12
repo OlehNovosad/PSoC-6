@@ -146,6 +146,7 @@ CY_MAINAPP_CM0P_SWCOMP_USED = \
 # Software components needed by CM4
 #
 CY_MAINAPP_SWCOMP_USED= \
+    psoc6sw-1.1/components/psoc6mw/csdadc \
     psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/user \
     psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io \
     psoc6sw-1.1/components/psoc6pdl/devices/psoc6/cm0p/prebuilt

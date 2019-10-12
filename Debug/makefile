@@ -11,6 +11,7 @@ RM := rm -rf
 -include psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/subdir.mk
 -include psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/gcc/subdir.mk
 -include psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/subdir.mk
+-include psoc6sw-1.1/components/psoc6mw/csdadc/subdir.mk
 -include Source/subdir.mk
 -include GeneratedSource/subdir.mk
 -include subdir.mk

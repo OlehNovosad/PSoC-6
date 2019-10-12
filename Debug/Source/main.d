@@ -89,6 +89,8 @@ Source/main.o: ../Source/main.c \
  E:\Programming\Cypress\PSoC6\CypressTest_mainapp/GeneratedSource/cycfg_routing.h \
  E:\Programming\Cypress\PSoC6\CypressTest_mainapp/GeneratedSource/cycfg_platform.h \
  C:/Users/Oleh/ModusToolbox_1.1/libraries/psoc6sw-1.1/components/psoc6pdl/drivers/include/cy_syspm.h \
+ C:/Users/Oleh/ModusToolbox_1.1/libraries/psoc6sw-1.1/components/psoc6pdl/drivers/include/cy_sysint.h \
+ ../Source/stdio_user.h \
  E:\Programming\Cypress\PSoC6\CypressTest_mainapp/GeneratedSource/Thermistor.h
 
 C:/Users/Oleh/ModusToolbox_1.1/libraries/psoc6sw-1.1/components/psoc6pdl/devices/psoc6/include/cy_device_headers.h:
@@ -270,5 +272,9 @@ E:\Programming\Cypress\PSoC6\CypressTest_mainapp/GeneratedSource/cycfg_routing.h
 E:\Programming\Cypress\PSoC6\CypressTest_mainapp/GeneratedSource/cycfg_platform.h:
 
 C:/Users/Oleh/ModusToolbox_1.1/libraries/psoc6sw-1.1/components/psoc6pdl/drivers/include/cy_syspm.h:
+
+C:/Users/Oleh/ModusToolbox_1.1/libraries/psoc6sw-1.1/components/psoc6pdl/drivers/include/cy_sysint.h:
+
+../Source/stdio_user.h:
 
 E:\Programming\Cypress\PSoC6\CypressTest_mainapp/GeneratedSource/Thermistor.h:

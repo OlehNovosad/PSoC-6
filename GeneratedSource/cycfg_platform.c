@@ -50,6 +50,7 @@
 #define CY_CFG_SYSCLK_CLKPERI_ENABLED 1
 #define CY_CFG_SYSCLK_PLL0_ENABLED 1
 #define CY_CFG_SYSCLK_CLKSLOW_ENABLED 1
+#define CY_CFG_SYSCLK_WCO_ENABLED 1
 #define CY_CFG_PWR_ENABLED 1
 #define CY_CFG_PWR_USING_LDO 1
 #define CY_CFG_PWR_USING_PMIC 0
@@ -129,6 +130,15 @@ __STATIC_INLINE void Cy_SysClk_Pll0Init()
 __STATIC_INLINE void Cy_SysClk_ClkSlowInit()
 {
     Cy_SysClk_ClkSlowSetDivider(0U);
+}
+__STATIC_INLINE void Cy_SysClk_WcoInit()
+{
+    (void)Cy_GPIO_Pin_FastInit(GPIO_PRT0, 0U, 0x00U, 0x00U, HSIOM_SEL_GPIO);
+    (void)Cy_GPIO_Pin_FastInit(GPIO_PRT0, 1U, 0x00U, 0x00U, HSIOM_SEL_GPIO);
+    if (CY_SYSCLK_SUCCESS != Cy_SysClk_WcoEnable(1000000UL))
+    {
+        cycfg_ClockStartupError(CY_CFG_SYSCLK_WCO_ERROR);
+    }
 }
 
 

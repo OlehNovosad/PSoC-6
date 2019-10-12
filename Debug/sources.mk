@@ -16,6 +16,7 @@ C_DEPS :=
 SUBDIRS := \
 GeneratedSource \
 Source \
+psoc6sw-1.1/components/psoc6mw/csdadc \
 psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/gcc \
 psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup \
 psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io \

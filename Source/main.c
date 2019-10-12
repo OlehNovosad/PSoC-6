@@ -28,10 +28,13 @@
 
 #include "cy_device_headers.h"
 #include "cycfg.h"
-#include "stdio.h"
+#include "cy_sysint.h"
+#include "stdio_user.h"
+#include <stdio.h>
 #include "Thermistor.h"
 
 cy_stc_scb_uart_context_t uart_context;
+cy_stc_rtc_config_t dateTime;
 
 void PrintDateAndTime();
 
@@ -42,32 +45,50 @@ int main(void)
     /* Set up the device based on configurator selections */
     init_cycfg_all();
 
-    Cy_SCB_UART_Init(Bridge_UART_HW, &Bridge_UART_config, &uart_context);
-    Cy_SCB_UART_Enable(Bridge_UART_HW);
-
-    Cy_RTC_Init(&RTC_config);
-
-    Cy_SAR_Init(SAR, &SAR_config);
-    Cy_SAR_Enable(SAR);
-    Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_CONTINUOUS);
-
     __enable_irq();
+
+    Cy_SCB_UART_Init(Bridge_UART_HW, &Bridge_UART_config, &uart_context);
+	Cy_SCB_UART_Enable(Bridge_UART_HW);
+
+	Cy_RTC_Init(&RTC_config);
+
+	Cy_SAR_Init(SAR, &SAR_config);
+	Cy_SAR_Enable(SAR);
+	Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_CONTINUOUS);
+
+    /* \x1b[2J\x1b[;H - ANSI ESC sequence for clear screen */
+	printf("\x1b[2J\x1b[;H");
 
     for(;;)
     {
     	PrintDateAndTime();
-    	ThermistorInfo();
-    	Cy_SysLib_Delay(1000);
     }
 }
 
 void PrintDateAndTime(){
-	cy_stc_rtc_config_t dateTime;
+	static bool access;
 
+	/* Variable used to store previous second value */
+	static uint32_t secPrev = CY_RTC_MAX_SEC_OR_MIN + 1;
+
+	/* Get current date and time */
 	Cy_RTC_GetDateAndTime(&dateTime);
 
-	printf("<%u-%u-%u %u:%u:%u> ",(uint16_t)dateTime.date, (uint16_t)dateTime.month, (uint16_t)dateTime.year,
-			(uint16_t)dateTime.hour,(uint16_t)dateTime.min,(uint16_t)dateTime.sec);
+	if(dateTime.sec != secPrev)
+	{
+		secPrev = dateTime.sec;
+		printf("<%u-%u-%u %u:%u:%2u> ",	\
+				(uint16_t)dateTime.date, (uint16_t)dateTime.month, (uint16_t)dateTime.year,\
+					(uint16_t)dateTime.hour, (uint16_t)dateTime.min, (uint16_t)dateTime.sec);
+		/*Print Thermistor info.*/
+		ThermistorInfo();
+		if(secPrev == 0 || secPrev == 30)
+			access = true;
+	}
+	if(access){
+		printf("Here will be SD writing. Soon:D\r\n");
+		access = false;
+	}
 }
 
 void ThermistorInfo(){
