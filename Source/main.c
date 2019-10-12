@@ -63,13 +63,6 @@ int main(void)
     /* \x1b[2J\x1b[;H - ANSI ESC sequence for clear screen */
 	printf("\x1b[2J\x1b[;H");
 
-
-    uint32_t pinState = 0UL;
-
-    /* Control P0.3 based on the pinState variable */
-
-
-
     for(;;)
     {
     	Cy_GPIO_Write(Pin_Led_PORT,Pin_Led_NUM,1);
