@@ -52,15 +52,27 @@ int main(void)
 
 	Cy_RTC_Init(&RTC_config);
 
-	Cy_SAR_Init(SAR, &SAR_config);
-	Cy_SAR_Enable(SAR);
-	Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_CONTINUOUS);
+	cy_en_sysanalog_status_t status_aref;
+	status_aref = Cy_SysAnalog_Init(&Cy_SysAnalog_Fast_Local);
+	Cy_SysAnalog_Enable();
+
+	Cy_SAR_Init(SAR_HW, &SAR_config);
+	Cy_SAR_Enable(SAR_HW);
+	Cy_SAR_StartConvert(SAR_HW, CY_SAR_START_CONVERT_CONTINUOUS);
 
     /* \x1b[2J\x1b[;H - ANSI ESC sequence for clear screen */
 	printf("\x1b[2J\x1b[;H");
 
+
+    uint32_t pinState = 0UL;
+
+    /* Control P0.3 based on the pinState variable */
+
+
+
     for(;;)
     {
+    	Cy_GPIO_Write(Pin_Led_PORT,Pin_Led_NUM,1);
     	PrintDateAndTime();
     }
 }
@@ -77,17 +89,21 @@ void PrintDateAndTime(){
 	if(dateTime.sec != secPrev)
 	{
 		secPrev = dateTime.sec;
-		printf("<%u-%u-%u %u:%u:%2u> ",	\
+		printf("<%2u-%2u-%2u %2u:%2u:%2u> ",	\
 				(uint16_t)dateTime.date, (uint16_t)dateTime.month, (uint16_t)dateTime.year,\
 					(uint16_t)dateTime.hour, (uint16_t)dateTime.min, (uint16_t)dateTime.sec);
+
 		/*Print Thermistor info.*/
 		ThermistorInfo();
+
 		if(secPrev == 0 || secPrev == 30)
 			access = true;
 	}
 	if(access){
+		Cy_GPIO_Write(Pin_Led_PORT,Pin_Led_NUM,0);
 		printf("Here will be SD writing. Soon:D\r\n");
 		access = false;
+		CyDelay(500);
 	}
 }
 

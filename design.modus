@@ -35,7 +35,7 @@
                 <Param id="is_variable_clock" value="false"/>
                 <Param id="soc_en" value="false"/>
                 <Param id="vneg_select" value="CY_SAR_NEG_SEL_VREF"/>
-                <Param id="sample_rate" value="100000"/>
+                <Param id="sample_rate" value="20000"/>
                 <Param id="diff_format" value="CY_SAR_DIFFERENTIAL_SIGNED"/>
                 <Param id="se_format" value="CY_SAR_SINGLE_ENDED_UNSIGNED"/>
                 <Param id="trigger_mode" value="CY_SAR_TRIGGER_MODE_FW_AND_HWEDGE"/>
@@ -45,13 +45,13 @@
                 <Param id="range_low" value="200"/>
                 <Param id="range_high" value="0"/>
                 <Param id="ch0_en" value="true"/>
-                <Param id="ch0_input" value="CY_SAR_CHAN_DIFFERENTIAL_UNPAIRED"/>
+                <Param id="ch0_input" value="CY_SAR_CHAN_SINGLE_ENDED"/>
                 <Param id="ch0_avg" value="true"/>
                 <Param id="ch0_range_intr" value="false"/>
                 <Param id="ch0_sat_intr" value="false"/>
                 <Param id="ch0_min_acq_time" value="167"/>
                 <Param id="ch1_en" value="true"/>
-                <Param id="ch1_input" value="CY_SAR_CHAN_DIFFERENTIAL_UNPAIRED"/>
+                <Param id="ch1_input" value="CY_SAR_CHAN_SINGLE_ENDED"/>
                 <Param id="ch1_avg" value="true"/>
                 <Param id="ch1_range_intr" value="false"/>
                 <Param id="ch1_sat_intr" value="false"/>
@@ -254,19 +254,9 @@
                 <Param id="sioOutputBuffer" value="true"/>
                 <Param id="inFlash" value="true"/>
             </Block>
-            <Block location="ioss[0].port[10].pin[2]" alias="" template="mxs40pin" version="1.0">
-                <Param id="DriveModes" value="CY_GPIO_DM_ANALOG"/>
-                <Param id="initialState" value="1"/>
-                <Param id="vtrip" value="CY_GPIO_VTRIP_CMOS"/>
-                <Param id="isrTrigger" value="CY_GPIO_INTR_DISABLE"/>
-                <Param id="slewRate" value="CY_GPIO_SLEW_FAST"/>
-                <Param id="driveStrength" value="CY_GPIO_DRIVE_FULL"/>
-                <Param id="sioOutputBuffer" value="true"/>
-                <Param id="inFlash" value="true"/>
-            </Block>
-            <Block location="ioss[0].port[10].pin[3]" alias="" template="mxs40pin" version="1.0">
-                <Param id="DriveModes" value="CY_GPIO_DM_ANALOG"/>
-                <Param id="initialState" value="1"/>
+            <Block location="ioss[0].port[13].pin[7]" alias="Pin_Led" template="mxs40pin" version="1.0">
+                <Param id="DriveModes" value="CY_GPIO_DM_STRONG"/>
+                <Param id="initialState" value="0"/>
                 <Param id="vtrip" value="CY_GPIO_VTRIP_CMOS"/>
                 <Param id="isrTrigger" value="CY_GPIO_INTR_DISABLE"/>
                 <Param id="slewRate" value="CY_GPIO_SLEW_FAST"/>
@@ -426,13 +416,8 @@
         </Net>
         <Net>
             <Port name="ioss[0].port[10].pin[0].analog[0]"/>
-            <Port name="ioss[0].port[10].pin[2].analog[0]"/>
-            <Port name="pass[0].sar[0].vplus[0]"/>
-        </Net>
-        <Net>
             <Port name="ioss[0].port[10].pin[1].analog[0]"/>
-            <Port name="ioss[0].port[10].pin[3].analog[0]"/>
-            <Port name="pass[0].sar[0].vminus[0]"/>
+            <Port name="pass[0].sar[0].vplus[0]"/>
         </Net>
         <Net>
             <Port name="pass[0].sar[0].clock_sar[0]"/>
@@ -443,11 +428,7 @@
             <Port name="scb[5].clock[0]"/>
         </Net>
         <Mux name="pass[0].sar[0]:mxs40sar-1.0:Vplus">
-            <Arm location="ioss[0].port[10].pin[2].analog[0]"/>
             <Arm location="ioss[0].port[10].pin[0].analog[0]"/>
-        </Mux>
-        <Mux name="pass[0].sar[0]:mxs40sar-1.0:Vminus">
-            <Arm location="ioss[0].port[10].pin[3].analog[0]"/>
             <Arm location="ioss[0].port[10].pin[1].analog[0]"/>
         </Mux>
     </Netlist>
