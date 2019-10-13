@@ -56,6 +56,22 @@ const cy_stc_gpio_pin_config_t ioss_0_port_0_pin_1_config =
 	.vrefSel = 0UL,
 	.vohSel = 0UL,
 };
+const cy_stc_gpio_pin_config_t PIN_SW_config = 
+{
+	.outVal = 1,
+	.driveMode = CY_GPIO_DM_PULLUP,
+	.hsiom = PIN_SW_HSIOM,
+	.intEdge = CY_GPIO_INTR_FALLING,
+	.intMask = 1UL,
+	.vtrip = CY_GPIO_VTRIP_CMOS,
+	.slewRate = CY_GPIO_SLEW_FAST,
+	.driveSel = CY_GPIO_DRIVE_FULL,
+	.vregEn = 0UL,
+	.ibufMode = 0UL,
+	.vtripSel = 0UL,
+	.vrefSel = 0UL,
+	.vohSel = 0UL,
+};
 const cy_stc_gpio_pin_config_t ioss_0_port_10_pin_0_config = 
 {
 	.outVal = 1,
@@ -191,6 +207,8 @@ void init_cycfg_pins(void)
 	Cy_GPIO_Pin_Init(ioss_0_port_0_pin_0_PORT, ioss_0_port_0_pin_0_PIN, &ioss_0_port_0_pin_0_config);
 
 	Cy_GPIO_Pin_Init(ioss_0_port_0_pin_1_PORT, ioss_0_port_0_pin_1_PIN, &ioss_0_port_0_pin_1_config);
+
+	Cy_GPIO_Pin_Init(PIN_SW_PORT, PIN_SW_PIN, &PIN_SW_config);
 
 	Cy_GPIO_Pin_Init(ioss_0_port_10_pin_0_PORT, ioss_0_port_10_pin_0_PIN, &ioss_0_port_10_pin_0_config);
 

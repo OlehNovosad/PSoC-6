@@ -25,7 +25,7 @@ E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy
 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
                               ./GeneratedSource/cycfg_platform.o (Cy_SysClk_ClkPathSetSource)
 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
-                              E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o) (Cy_SysInt_Init)
+                              ./Source/main.o (Cy_SysInt_Init)
 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
                               ./Source/main.o (Cy_SysLib_Delay)
 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
@@ -877,7 +877,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x76 ./Source/main.o
  .debug_macro   0x00000000      0x2e3 ./Source/main.o
  .debug_macro   0x00000000       0x2e ./Source/main.o
- .debug_macro   0x00000000      0x1a4 ./Source/main.o
+ .debug_macro   0x00000000      0x1db ./Source/main.o
  .debug_macro   0x00000000       0x2e ./Source/main.o
  .debug_macro   0x00000000       0xcf ./Source/main.o
  .debug_macro   0x00000000       0x17 ./Source/main.o
@@ -1061,7 +1061,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x76 ./Source/stdio_user.o
  .debug_macro   0x00000000      0x2e3 ./Source/stdio_user.o
  .debug_macro   0x00000000       0x2e ./Source/stdio_user.o
- .debug_macro   0x00000000      0x1a4 ./Source/stdio_user.o
+ .debug_macro   0x00000000      0x1db ./Source/stdio_user.o
  .debug_macro   0x00000000       0x2e ./Source/stdio_user.o
  .debug_macro   0x00000000       0x27 ./Source/stdio_user.o
  .group         0x00000000        0xc ./GeneratedSource/Thermistor.o
@@ -1238,7 +1238,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x76 ./GeneratedSource/Thermistor.o
  .debug_macro   0x00000000      0x2e3 ./GeneratedSource/Thermistor.o
  .debug_macro   0x00000000       0x2e ./GeneratedSource/Thermistor.o
- .debug_macro   0x00000000      0x1a4 ./GeneratedSource/Thermistor.o
+ .debug_macro   0x00000000      0x1db ./GeneratedSource/Thermistor.o
  .debug_macro   0x00000000       0x2e ./GeneratedSource/Thermistor.o
  .debug_macro   0x00000000       0x58 ./GeneratedSource/Thermistor.o
  .debug_macro   0x00000000       0x17 ./GeneratedSource/Thermistor.o
@@ -1413,7 +1413,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x76 ./GeneratedSource/cycfg.o
  .debug_macro   0x00000000      0x2e3 ./GeneratedSource/cycfg.o
  .debug_macro   0x00000000       0x2e ./GeneratedSource/cycfg.o
- .debug_macro   0x00000000      0x1a4 ./GeneratedSource/cycfg.o
+ .debug_macro   0x00000000      0x1db ./GeneratedSource/cycfg.o
  .debug_macro   0x00000000       0x2e ./GeneratedSource/cycfg.o
  .group         0x00000000        0xc ./GeneratedSource/cycfg_clocks.o
  .group         0x00000000        0xc ./GeneratedSource/cycfg_clocks.o
@@ -1852,7 +1852,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x3a7 ./GeneratedSource/cycfg_pins.o
  .debug_macro   0x00000000      0x2e3 ./GeneratedSource/cycfg_pins.o
  .debug_macro   0x00000000       0x2e ./GeneratedSource/cycfg_pins.o
- .debug_macro   0x00000000      0x1a4 ./GeneratedSource/cycfg_pins.o
+ .debug_macro   0x00000000      0x1db ./GeneratedSource/cycfg_pins.o
  .group         0x00000000        0xc ./GeneratedSource/cycfg_platform.o
  .group         0x00000000        0xc ./GeneratedSource/cycfg_platform.o
  .group         0x00000000        0xc ./GeneratedSource/cycfg_platform.o
@@ -5220,7 +5220,7 @@ LOAD c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-
 LOAD c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a
 END GROUP
 
-.text           0x10002000     0x8084
+.text           0x10002000     0x8134
                 0x10002000                . = ALIGN (0x4)
                 0x10002000                __Vectors = .
  *(.vectors)
@@ -5432,451 +5432,455 @@ END GROUP
  .text.Cy_SystemInitFpuEnable
                 0x100025f8       0x28 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
                 0x100025f8                Cy_SystemInitFpuEnable
+ .text.Isr_switch
+                0x10002620       0x34 ./Source/main.o
+                0x10002620                Isr_switch
+ *fill*         0x10002654        0x4 
  .text.ThermistorInfo
-                0x10002620       0x80 ./Source/main.o
-                0x10002620                ThermistorInfo
+                0x10002658       0x9c ./Source/main.o
+                0x10002658                ThermistorInfo
  .text.PrintDateAndTime
-                0x100026a0       0x8c ./Source/main.o
-                0x100026a0                PrintDateAndTime
- .text.main     0x1000272c       0x8c ./Source/main.o
-                0x1000272c                main
+                0x100026f4       0x8c ./Source/main.o
+                0x100026f4                PrintDateAndTime
+ .text.main     0x10002780       0xa8 ./Source/main.o
+                0x10002780                main
  .text.STDIO_PutChar
-                0x100027b8       0x18 ./Source/stdio_user.o
-                0x100027b8                STDIO_PutChar
+                0x10002828       0x18 ./Source/stdio_user.o
+                0x10002828                STDIO_PutChar
  .text.STDIO_GetChar
-                0x100027d0       0x1c ./Source/stdio_user.o
-                0x100027d0                STDIO_GetChar
+                0x10002840       0x1c ./Source/stdio_user.o
+                0x10002840                STDIO_GetChar
  .text.Thermistor_GetResistance
-                0x100027ec       0x24 ./GeneratedSource/Thermistor.o
-                0x100027ec                Thermistor_GetResistance
+                0x1000285c       0x24 ./GeneratedSource/Thermistor.o
+                0x1000285c                Thermistor_GetResistance
  .text.Thermistor_GetTemperature
-                0x10002810       0xc8 ./GeneratedSource/Thermistor.o
-                0x10002810                Thermistor_GetTemperature
+                0x10002880       0xc8 ./GeneratedSource/Thermistor.o
+                0x10002880                Thermistor_GetTemperature
  .text.init_cycfg_all
-                0x100028d8       0x18 ./GeneratedSource/cycfg.o
-                0x100028d8                init_cycfg_all
+                0x10002948       0x18 ./GeneratedSource/cycfg.o
+                0x10002948                init_cycfg_all
  .text.init_cycfg_clocks
-                0x100028f0       0xa4 ./GeneratedSource/cycfg_clocks.o
-                0x100028f0                init_cycfg_clocks
+                0x10002960       0xa4 ./GeneratedSource/cycfg_clocks.o
+                0x10002960                init_cycfg_clocks
  .text.init_cycfg_peripherals
-                0x10002994       0x30 ./GeneratedSource/cycfg_peripherals.o
-                0x10002994                init_cycfg_peripherals
+                0x10002a04       0x30 ./GeneratedSource/cycfg_peripherals.o
+                0x10002a04                init_cycfg_peripherals
  .text.init_cycfg_pins
-                0x100029c4       0xa4 ./GeneratedSource/cycfg_pins.o
-                0x100029c4                init_cycfg_pins
+                0x10002a34       0xb4 ./GeneratedSource/cycfg_pins.o
+                0x10002a34                init_cycfg_pins
  .text.cycfg_ClockStartupError
-                0x10002a68        0x2 ./GeneratedSource/cycfg_platform.o
-                0x10002a68                cycfg_ClockStartupError
- *fill*         0x10002a6a        0x2 
+                0x10002ae8        0x2 ./GeneratedSource/cycfg_platform.o
+                0x10002ae8                cycfg_ClockStartupError
+ *fill*         0x10002aea        0x2 
  .text.init_cycfg_platform
-                0x10002a6c      0x360 ./GeneratedSource/cycfg_platform.o
-                0x10002a6c                init_cycfg_platform
+                0x10002aec      0x360 ./GeneratedSource/cycfg_platform.o
+                0x10002aec                init_cycfg_platform
  .text.init_cycfg_routing
-                0x10002dcc       0x10 ./GeneratedSource/cycfg_routing.o
-                0x10002dcc                init_cycfg_routing
- *fill*         0x10002ddc        0x4 
- .text          0x10002de0       0x20 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib_gcc.o)
-                0x10002de0                Cy_SysLib_DelayCycles
-                0x10002df2                Cy_SysLib_EnterCriticalSection
-                0x10002dfa                Cy_SysLib_ExitCriticalSection
+                0x10002e4c       0x10 ./GeneratedSource/cycfg_routing.o
+                0x10002e4c                init_cycfg_routing
+ *fill*         0x10002e5c        0x4 
+ .text          0x10002e60       0x20 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib_gcc.o)
+                0x10002e60                Cy_SysLib_DelayCycles
+                0x10002e72                Cy_SysLib_EnterCriticalSection
+                0x10002e7a                Cy_SysLib_ExitCriticalSection
  .text.Cy_PDL_Init
-                0x10002e00        0xc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
-                0x10002e00                Cy_PDL_Init
+                0x10002e80        0xc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
+                0x10002e80                Cy_PDL_Init
  .text.Cy_GPIO_Pin_Init
-                0x10002e0c      0x360 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
-                0x10002e0c                Cy_GPIO_Pin_Init
+                0x10002e8c      0x360 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
+                0x10002e8c                Cy_GPIO_Pin_Init
  .text.Cy_GPIO_Pin_FastInit
-                0x1000316c       0xfc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
-                0x1000316c                Cy_GPIO_Pin_FastInit
+                0x100031ec       0xfc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
+                0x100031ec                Cy_GPIO_Pin_FastInit
  .text.Cy_IPC_Pipe_Config
-                0x10003268       0x14 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
-                0x10003268                Cy_IPC_Pipe_Config
+                0x100032e8       0x14 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
+                0x100032e8                Cy_IPC_Pipe_Config
  .text.Cy_IPC_Pipe_EndpointInit
-                0x1000327c       0xdc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
-                0x1000327c                Cy_IPC_Pipe_EndpointInit
+                0x100032fc       0xdc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
+                0x100032fc                Cy_IPC_Pipe_EndpointInit
  .text.Cy_IPC_Pipe_Init
-                0x10003358       0xc0 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
-                0x10003358                Cy_IPC_Pipe_Init
+                0x100033d8       0xc0 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
+                0x100033d8                Cy_IPC_Pipe_Init
  .text.Cy_IPC_Pipe_ExecCallback
-                0x10003418       0xcc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
-                0x10003418                Cy_IPC_Pipe_ExecCallback
+                0x10003498       0xcc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
+                0x10003498                Cy_IPC_Pipe_ExecCallback
  .text.Cy_IPC_Pipe_ExecuteCallback
-                0x100034e4       0x30 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
-                0x100034e4                Cy_IPC_Pipe_ExecuteCallback
+                0x10003564       0x30 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
+                0x10003564                Cy_IPC_Pipe_ExecuteCallback
  .text.Cy_IPC_Sema_InitExt
-                0x10003514       0xac E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
-                0x10003514                Cy_IPC_Sema_InitExt
+                0x10003594       0xac E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
+                0x10003594                Cy_IPC_Sema_InitExt
  .text.Cy_IPC_Sema_Init
-                0x100035c0       0x6c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
-                0x100035c0                Cy_IPC_Sema_Init
+                0x10003640       0x6c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
+                0x10003640                Cy_IPC_Sema_Init
  .text.ConstructTimeDate
-                0x1000362c      0x18c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+                0x100036ac      0x18c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
  .text.Cy_RTC_SetDateAndTime
-                0x100037b8      0x184 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
-                0x100037b8                Cy_RTC_SetDateAndTime
+                0x10003838      0x184 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+                0x10003838                Cy_RTC_SetDateAndTime
  .text.Cy_RTC_Init
-                0x1000393c        0x8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
-                0x1000393c                Cy_RTC_Init
+                0x100039bc        0x8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+                0x100039bc                Cy_RTC_Init
  .text.Cy_RTC_GetDateAndTime
-                0x10003944       0xf8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
-                0x10003944                Cy_RTC_GetDateAndTime
+                0x100039c4       0xf8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+                0x100039c4                Cy_RTC_GetDateAndTime
  .text.Cy_SAR_Init
-                0x10003a3c      0x220 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
-                0x10003a3c                Cy_SAR_Init
+                0x10003abc      0x220 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
+                0x10003abc                Cy_SAR_Init
  .text.Cy_SAR_Enable
-                0x10003c5c       0x20 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
-                0x10003c5c                Cy_SAR_Enable
+                0x10003cdc       0x20 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
+                0x10003cdc                Cy_SAR_Enable
  .text.Cy_SAR_StartConvert
-                0x10003c7c       0x30 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
-                0x10003c7c                Cy_SAR_StartConvert
+                0x10003cfc       0x30 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
+                0x10003cfc                Cy_SAR_StartConvert
  .text.Cy_SAR_GetResult16
-                0x10003cac       0x30 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
-                0x10003cac                Cy_SAR_GetResult16
+                0x10003d2c       0x30 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
+                0x10003d2c                Cy_SAR_GetResult16
  .text.Cy_SCB_Write
-                0x10003cdc       0x26 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
-                0x10003cdc                Cy_SCB_Write
- *fill*         0x10003d02        0x2 
+                0x10003d5c       0x26 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
+                0x10003d5c                Cy_SCB_Write
+ *fill*         0x10003d82        0x2 
  .text.Cy_SCB_UART_Init
-                0x10003d04      0x3a4 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
-                0x10003d04                Cy_SCB_UART_Init
+                0x10003d84      0x3a4 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
+                0x10003d84                Cy_SCB_UART_Init
  .text.Cy_SysAnalog_Init
-                0x100040a8       0xa4 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
-                0x100040a8                Cy_SysAnalog_Init
+                0x10004128       0xa4 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
+                0x10004128                Cy_SysAnalog_Init
  .text.Cy_SysClk_ClkPathSetSource
-                0x1000414c       0x5c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
-                0x1000414c                Cy_SysClk_ClkPathSetSource
+                0x100041cc       0x5c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+                0x100041cc                Cy_SysClk_ClkPathSetSource
  .text.Cy_SysClk_ClkPathGetSource
-                0x100041a8       0x4c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
-                0x100041a8                Cy_SysClk_ClkPathGetSource
+                0x10004228       0x4c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+                0x10004228                Cy_SysClk_ClkPathGetSource
  .text.Cy_SysClk_PllManualConfigure
-                0x100041f4       0xc8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
-                0x100041f4                Cy_SysClk_PllManualConfigure
+                0x10004274       0xc8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+                0x10004274                Cy_SysClk_PllManualConfigure
  .text.Cy_SysClk_PllEnable
-                0x100042bc       0x60 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
-                0x100042bc                Cy_SysClk_PllEnable
+                0x1000433c       0x60 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+                0x1000433c                Cy_SysClk_PllEnable
  .text.Cy_SysInt_SetVector
-                0x1000431c       0x48 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
-                0x1000431c                Cy_SysInt_SetVector
+                0x1000439c       0x48 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
+                0x1000439c                Cy_SysInt_SetVector
  .text.Cy_SysInt_Init
-                0x10004364       0x74 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
-                0x10004364                Cy_SysInt_Init
+                0x100043e4       0x74 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
+                0x100043e4                Cy_SysInt_Init
  .text.Cy_SysLib_Delay
-                0x100043d8       0x30 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
-                0x100043d8                Cy_SysLib_Delay
+                0x10004458       0x30 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+                0x10004458                Cy_SysLib_Delay
  .text.Cy_SysLib_DelayUs
-                0x10004408       0x14 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
-                0x10004408                Cy_SysLib_DelayUs
+                0x10004488       0x14 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+                0x10004488                Cy_SysLib_DelayUs
  .text.Cy_SysLib_Halt
-                0x1000441c        0x4 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
-                0x1000441c                Cy_SysLib_Halt
+                0x1000449c        0x4 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+                0x1000449c                Cy_SysLib_Halt
  .text.Cy_SysLib_AssertFailed
-                0x10004420       0x1c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
-                0x10004420                Cy_SysLib_AssertFailed
+                0x100044a0       0x1c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+                0x100044a0                Cy_SysLib_AssertFailed
  .text.Cy_SysLib_ResetBackupDomain
-                0x1000443c       0x20 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
-                0x1000443c                Cy_SysLib_ResetBackupDomain
+                0x100044bc       0x20 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+                0x100044bc                Cy_SysLib_ResetBackupDomain
  .text.Cy_SysLib_GetResetReason
-                0x1000445c       0x18 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
-                0x1000445c                Cy_SysLib_GetResetReason
+                0x100044dc       0x18 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+                0x100044dc                Cy_SysLib_GetResetReason
  .text.Cy_SysLib_ProcessingFault
-                0x10004474        0x2 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
-                0x10004474                Cy_SysLib_ProcessingFault
- *fill*         0x10004476        0x2 
+                0x100044f4        0x2 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+                0x100044f4                Cy_SysLib_ProcessingFault
+ *fill*         0x100044f6        0x2 
  .text.Cy_SysLib_FaultHandler
-                0x10004478       0xa4 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
-                0x10004478                Cy_SysLib_FaultHandler
+                0x100044f8       0xa4 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+                0x100044f8                Cy_SysLib_FaultHandler
  .text.Cy_SysLib_SetWaitStates
-                0x1000451c       0xcc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
-                0x1000451c                Cy_SysLib_SetWaitStates
+                0x1000459c       0xcc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+                0x1000459c                Cy_SysLib_SetWaitStates
  .text.SetReadMarginTrimUlp
-                0x100045e8       0x84 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+                0x10004668       0x84 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
  .text.SetReadMarginTrimLp
-                0x1000466c       0x7c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+                0x100046ec       0x7c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
  .text.SetWriteAssistTrimUlp
-                0x100046e8       0x58 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+                0x10004768       0x58 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
  .text.SetWriteAssistTrimLp
-                0x10004740       0x68 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+                0x100047c0       0x68 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
  .text.IsVoltageChangePossible
-                0x100047a8       0x46 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
- *fill*         0x100047ee        0x2 
+                0x10004828       0x46 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+ *fill*         0x1000486e        0x2 
  .text.Cy_SysPm_WriteVoltageBitForFlash
-                0x100047f0      0x118 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
-                0x100047f0                Cy_SysPm_WriteVoltageBitForFlash
+                0x10004870      0x118 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+                0x10004870                Cy_SysPm_WriteVoltageBitForFlash
  .text.Cy_SysPm_LdoSetVoltage
-                0x10004908       0xcc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
-                0x10004908                Cy_SysPm_LdoSetVoltage
+                0x10004988       0xcc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+                0x10004988                Cy_SysPm_LdoSetVoltage
  .text.Cy_IPC_Drv_LockRelease
-                0x100049d4       0x40 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
-                0x100049d4                Cy_IPC_Drv_LockRelease
+                0x10004a54       0x40 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
+                0x10004a54                Cy_IPC_Drv_LockRelease
  .text.Cy_IPC_Drv_SendMsgWord
-                0x10004a14       0x34 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
-                0x10004a14                Cy_IPC_Drv_SendMsgWord
+                0x10004a94       0x34 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
+                0x10004a94                Cy_IPC_Drv_SendMsgWord
  .text.Cy_IPC_Drv_ReadMsgWord
-                0x10004a48       0x38 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
-                0x10004a48                Cy_IPC_Drv_ReadMsgWord
+                0x10004ac8       0x38 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
+                0x10004ac8                Cy_IPC_Drv_ReadMsgWord
  .text.Cy_Prot_GetActivePC
-                0x10004a80       0x38 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
-                0x10004a80                Cy_Prot_GetActivePC
- .text          0x10004ab8      0x378 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_addsubdf3.o)
-                0x10004ab8                __aeabi_drsub
-                0x10004ac0                __aeabi_dsub
-                0x10004ac0                __subdf3
-                0x10004ac4                __aeabi_dadd
-                0x10004ac4                __adddf3
-                0x10004d3c                __floatunsidf
-                0x10004d3c                __aeabi_ui2d
-                0x10004d5c                __floatsidf
-                0x10004d5c                __aeabi_i2d
-                0x10004d80                __aeabi_f2d
-                0x10004d80                __extendsfdf2
-                0x10004dc4                __floatundidf
-                0x10004dc4                __aeabi_ul2d
-                0x10004dd4                __floatdidf
-                0x10004dd4                __aeabi_l2d
- .text          0x10004e30      0x424 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_muldivdf3.o)
-                0x10004e30                __aeabi_dmul
-                0x10004e30                __muldf3
-                0x10005084                __divdf3
-                0x10005084                __aeabi_ddiv
- .text          0x10005254       0xa0 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_truncdfsf2.o)
-                0x10005254                __truncdfsf2
-                0x10005254                __aeabi_d2f
- .text.memcpy   0x100052f4       0x16 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-memcpy-stub.o)
-                0x100052f4                memcpy
- .text.memset   0x1000530a       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-memset.o)
-                0x1000530a                memset
- .text.__cvt    0x1000531a       0xbc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_float.o)
-                0x1000531a                __cvt
+                0x10004b00       0x38 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
+                0x10004b00                Cy_Prot_GetActivePC
+ .text          0x10004b38      0x378 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_addsubdf3.o)
+                0x10004b38                __aeabi_drsub
+                0x10004b40                __aeabi_dsub
+                0x10004b40                __subdf3
+                0x10004b44                __aeabi_dadd
+                0x10004b44                __adddf3
+                0x10004dbc                __floatunsidf
+                0x10004dbc                __aeabi_ui2d
+                0x10004ddc                __floatsidf
+                0x10004ddc                __aeabi_i2d
+                0x10004e00                __aeabi_f2d
+                0x10004e00                __extendsfdf2
+                0x10004e44                __floatundidf
+                0x10004e44                __aeabi_ul2d
+                0x10004e54                __floatdidf
+                0x10004e54                __aeabi_l2d
+ .text          0x10004eb0      0x424 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_muldivdf3.o)
+                0x10004eb0                __aeabi_dmul
+                0x10004eb0                __muldf3
+                0x10005104                __divdf3
+                0x10005104                __aeabi_ddiv
+ .text          0x100052d4       0xa0 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_truncdfsf2.o)
+                0x100052d4                __truncdfsf2
+                0x100052d4                __aeabi_d2f
+ .text.memcpy   0x10005374       0x16 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-memcpy-stub.o)
+                0x10005374                memcpy
+ .text.memset   0x1000538a       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-memset.o)
+                0x1000538a                memset
+ .text.__cvt    0x1000539a       0xbc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_float.o)
+                0x1000539a                __cvt
  .text.__exponent
-                0x100053d6       0x66 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_float.o)
-                0x100053d6                __exponent
+                0x10005456       0x66 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_float.o)
+                0x10005456                __exponent
  .text._printf_float
-                0x1000543c      0x48c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_float.o)
-                0x1000543c                _printf_float
+                0x100054bc      0x48c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_float.o)
+                0x100054bc                _printf_float
  .text._printf_common
-                0x100058c8       0xea c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x100058c8                _printf_common
- *fill*         0x100059b2        0x2 
+                0x10005948       0xea c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x10005948                _printf_common
+ *fill*         0x10005a32        0x2 
  .text._printf_i
-                0x100059b4      0x224 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x100059b4                _printf_i
- .text.printf   0x10005bd8       0x30 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-printf.o)
-                0x10005bd8                iprintf
-                0x10005bd8                printf
- .text._puts_r  0x10005c08       0xb8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-puts.o)
-                0x10005c08                _puts_r
- .text.puts     0x10005cc0       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-puts.o)
-                0x10005cc0                puts
- .text          0x10005cd0       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-strlen.o)
-                0x10005cd0                strlen
- .text.strncpy  0x10005ce0       0x2a c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-strncpy.o)
-                0x10005ce0                strncpy
- *fill*         0x10005d0a        0x2 
+                0x10005a34      0x224 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x10005a34                _printf_i
+ .text.printf   0x10005c58       0x30 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-printf.o)
+                0x10005c58                iprintf
+                0x10005c58                printf
+ .text._puts_r  0x10005c88       0xb8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-puts.o)
+                0x10005c88                _puts_r
+ .text.puts     0x10005d40       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-puts.o)
+                0x10005d40                puts
+ .text          0x10005d50       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-strlen.o)
+                0x10005d50                strlen
+ .text.strncpy  0x10005d60       0x2a c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-strncpy.o)
+                0x10005d60                strncpy
+ *fill*         0x10005d8a        0x2 
  .text.__swbuf_r
-                0x10005d0c       0xa4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-wbuf.o)
-                0x10005d0c                __swbuf_r
+                0x10005d8c       0xa4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-wbuf.o)
+                0x10005d8c                __swbuf_r
  .text.__swsetup_r
-                0x10005db0       0xdc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-wsetup.o)
-                0x10005db0                __swsetup_r
- .text.quorem   0x10005e8c      0x118 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-dtoa.o)
- *fill*         0x10005fa4        0x4 
- .text._dtoa_r  0x10005fa8      0xb7c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-dtoa.o)
-                0x10005fa8                _dtoa_r
+                0x10005e30       0xdc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-wsetup.o)
+                0x10005e30                __swsetup_r
+ .text.quorem   0x10005f0c      0x118 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-dtoa.o)
+ *fill*         0x10006024        0x4 
+ .text._dtoa_r  0x10006028      0xb7c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-dtoa.o)
+                0x10006028                _dtoa_r
  .text.__sflush_r
-                0x10006b24      0x10c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-fflush.o)
-                0x10006b24                __sflush_r
+                0x10006ba4      0x10c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-fflush.o)
+                0x10006ba4                __sflush_r
  .text._fflush_r
-                0x10006c30       0x54 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-fflush.o)
-                0x10006c30                _fflush_r
- .text.std      0x10006c84       0x48 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
+                0x10006cb0       0x54 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-fflush.o)
+                0x10006cb0                _fflush_r
+ .text.std      0x10006d04       0x48 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
  .text._cleanup_r
-                0x10006ccc        0xc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
-                0x10006ccc                _cleanup_r
+                0x10006d4c        0xc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
+                0x10006d4c                _cleanup_r
  .text.__sfmoreglue
-                0x10006cd8       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
-                0x10006cd8                __sfmoreglue
- .text.__sinit  0x10006d04       0x60 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
-                0x10006d04                __sinit
- .text.__sfp    0x10006d64       0x78 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
-                0x10006d64                __sfp
+                0x10006d58       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
+                0x10006d58                __sfmoreglue
+ .text.__sinit  0x10006d84       0x60 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
+                0x10006d84                __sinit
+ .text.__sfp    0x10006de4       0x78 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
+                0x10006de4                __sfp
  .text._fwalk_reent
-                0x10006ddc       0x3c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-fwalk.o)
-                0x10006ddc                _fwalk_reent
+                0x10006e5c       0x3c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-fwalk.o)
+                0x10006e5c                _fwalk_reent
  .text._localeconv_r
-                0x10006e18       0x1c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-localeconv.o)
-                0x10006e18                _localeconv_r
+                0x10006e98       0x1c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-localeconv.o)
+                0x10006e98                _localeconv_r
  .text.__swhatbuf_r
-                0x10006e34       0x48 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-makebuf.o)
-                0x10006e34                __swhatbuf_r
+                0x10006eb4       0x48 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-makebuf.o)
+                0x10006eb4                __swhatbuf_r
  .text.__smakebuf_r
-                0x10006e7c       0x80 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-makebuf.o)
-                0x10006e7c                __smakebuf_r
- .text.malloc   0x10006efc       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-malloc.o)
-                0x10006efc                malloc
+                0x10006efc       0x80 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-makebuf.o)
+                0x10006efc                __smakebuf_r
+ .text.malloc   0x10006f7c       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-malloc.o)
+                0x10006f7c                malloc
  .text.__ascii_mbtowc
-                0x10006f0c       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mbtowc_r.o)
-                0x10006f0c                __ascii_mbtowc
- .text          0x10006f30       0xa0 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-memchr.o)
-                0x10006f30                memchr
- .text._Balloc  0x10006fd0       0x68 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
-                0x10006fd0                _Balloc
- .text._Bfree   0x10007038       0x2e c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
-                0x10007038                _Bfree
+                0x10006f8c       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mbtowc_r.o)
+                0x10006f8c                __ascii_mbtowc
+ .text          0x10006fb0       0xa0 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-memchr.o)
+                0x10006fb0                memchr
+ .text._Balloc  0x10007050       0x68 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
+                0x10007050                _Balloc
+ .text._Bfree   0x100070b8       0x2e c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
+                0x100070b8                _Bfree
  .text.__multadd
-                0x10007066       0x76 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
-                0x10007066                __multadd
+                0x100070e6       0x76 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
+                0x100070e6                __multadd
  .text.__hi0bits
-                0x100070dc       0x3e c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
-                0x100070dc                __hi0bits
+                0x1000715c       0x3e c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
+                0x1000715c                __hi0bits
  .text.__lo0bits
-                0x1000711a       0x5e c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
-                0x1000711a                __lo0bits
- .text.__i2b    0x10007178       0x12 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
-                0x10007178                __i2b
+                0x1000719a       0x5e c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
+                0x1000719a                __lo0bits
+ .text.__i2b    0x100071f8       0x12 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
+                0x100071f8                __i2b
  .text.__multiply
-                0x1000718a      0x12c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
-                0x1000718a                __multiply
- *fill*         0x100072b6        0x2 
+                0x1000720a      0x12c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
+                0x1000720a                __multiply
+ *fill*         0x10007336        0x2 
  .text.__pow5mult
-                0x100072b8       0x9c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
-                0x100072b8                __pow5mult
+                0x10007338       0x9c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
+                0x10007338                __pow5mult
  .text.__lshift
-                0x10007354       0xa8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
-                0x10007354                __lshift
- .text.__mcmp   0x100073fc       0x34 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
-                0x100073fc                __mcmp
- .text.__mdiff  0x10007430       0xba c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
-                0x10007430                __mdiff
- .text.__d2b    0x100074ea       0x9e c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
-                0x100074ea                __d2b
+                0x100073d4       0xa8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
+                0x100073d4                __lshift
+ .text.__mcmp   0x1000747c       0x34 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
+                0x1000747c                __mcmp
+ .text.__mdiff  0x100074b0       0xba c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
+                0x100074b0                __mdiff
+ .text.__d2b    0x1000756a       0x9e c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
+                0x1000756a                __d2b
  .text._calloc_r
-                0x10007588       0x1c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-callocr.o)
-                0x10007588                _calloc_r
- .text._free_r  0x100075a4       0x9c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-freer.o)
-                0x100075a4                _free_r
+                0x10007608       0x1c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-callocr.o)
+                0x10007608                _calloc_r
+ .text._free_r  0x10007624       0x9c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-freer.o)
+                0x10007624                _free_r
  .text._malloc_r
-                0x10007640       0xb4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-mallocr.o)
-                0x10007640                _malloc_r
+                0x100076c0       0xb4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-mallocr.o)
+                0x100076c0                _malloc_r
  .text.__sfputc_r
-                0x100076f4       0x2e c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf.o)
+                0x10007774       0x2e c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf.o)
  .text.__sfputs_r
-                0x10007722       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf.o)
-                0x10007722                __sfputs_r
- *fill*         0x10007746        0x2 
+                0x100077a2       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf.o)
+                0x100077a2                __sfputs_r
+ *fill*         0x100077c6        0x2 
  .text._vfprintf_r
-                0x10007748      0x228 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf.o)
-                0x10007748                _vfprintf_r
-                0x10007748                _vfiprintf_r
- .text._sbrk_r  0x10007970       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-sbrkr.o)
-                0x10007970                _sbrk_r
- .text.__sread  0x10007990       0x22 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-stdio.o)
-                0x10007990                __sread
+                0x100077c8      0x228 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf.o)
+                0x100077c8                _vfprintf_r
+                0x100077c8                _vfiprintf_r
+ .text._sbrk_r  0x100079f0       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-sbrkr.o)
+                0x100079f0                _sbrk_r
+ .text.__sread  0x10007a10       0x22 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-stdio.o)
+                0x10007a10                __sread
  .text.__swrite
-                0x100079b2       0x38 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-stdio.o)
-                0x100079b2                __swrite
- .text.__sseek  0x100079ea       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-stdio.o)
-                0x100079ea                __sseek
+                0x10007a32       0x38 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-stdio.o)
+                0x10007a32                __swrite
+ .text.__sseek  0x10007a6a       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-stdio.o)
+                0x10007a6a                __sseek
  .text.__sclose
-                0x10007a0e        0x8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-stdio.o)
-                0x10007a0e                __sclose
+                0x10007a8e        0x8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-stdio.o)
+                0x10007a8e                __sclose
  .text.__ascii_wctomb
-                0x10007a16       0x1a c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-wctomb_r.o)
-                0x10007a16                __ascii_wctomb
+                0x10007a96       0x1a c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-wctomb_r.o)
+                0x10007a96                __ascii_wctomb
  .text._write_r
-                0x10007a30       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-writer.o)
-                0x10007a30                _write_r
+                0x10007ab0       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-writer.o)
+                0x10007ab0                _write_r
  .text._close_r
-                0x10007a54       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-closer.o)
-                0x10007a54                _close_r
+                0x10007ad4       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-closer.o)
+                0x10007ad4                _close_r
  .text._fstat_r
-                0x10007a74       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-fstatr.o)
-                0x10007a74                _fstat_r
+                0x10007af4       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-fstatr.o)
+                0x10007af4                _fstat_r
  .text._isatty_r
-                0x10007a98       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-isattyr.o)
-                0x10007a98                _isatty_r
+                0x10007b18       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-isattyr.o)
+                0x10007b18                _isatty_r
  .text._lseek_r
-                0x10007ab8       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-lseekr.o)
-                0x10007ab8                _lseek_r
+                0x10007b38       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-lseekr.o)
+                0x10007b38                _lseek_r
  .text.__malloc_lock
-                0x10007adc        0x2 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mlock.o)
-                0x10007adc                __malloc_lock
+                0x10007b5c        0x2 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mlock.o)
+                0x10007b5c                __malloc_lock
  .text.__malloc_unlock
-                0x10007ade        0x2 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mlock.o)
-                0x10007ade                __malloc_unlock
- .text._read_r  0x10007ae0       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-readr.o)
-                0x10007ae0                _read_r
- .text          0x10007b04      0x110 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_cmpdf2.o)
-                0x10007b04                __gtdf2
-                0x10007b04                __gedf2
-                0x10007b0c                __ltdf2
-                0x10007b0c                __ledf2
-                0x10007b14                __nedf2
-                0x10007b14                __eqdf2
-                0x10007b14                __cmpdf2
-                0x10007b90                __aeabi_cdrcmple
-                0x10007ba0                __aeabi_cdcmpeq
-                0x10007ba0                __aeabi_cdcmple
-                0x10007bb0                __aeabi_dcmpeq
-                0x10007bc4                __aeabi_dcmplt
-                0x10007bd8                __aeabi_dcmple
-                0x10007bec                __aeabi_dcmpge
-                0x10007c00                __aeabi_dcmpgt
- .text          0x10007c14       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_unorddf2.o)
-                0x10007c14                __unorddf2
-                0x10007c14                __aeabi_dcmpun
- .text          0x10007c40       0x50 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_fixdfsi.o)
-                0x10007c40                __aeabi_d2iz
-                0x10007c40                __fixdfsi
- .text._close   0x10007c90       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(close.o)
-                0x10007c90                _close
- .text._fstat   0x10007ca0       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(fstat.o)
-                0x10007ca0                _fstat
- .text._isatty  0x10007cb0       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(isatty.o)
-                0x10007cb0                _isatty
- .text._lseek   0x10007cc0       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(lseek.o)
-                0x10007cc0                _lseek
- .text._sbrk    0x10007cd0       0x1c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(sbrk.o)
-                0x10007cd0                _sbrk
- .text.log      0x10007cec       0xfc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-w_log.o)
-                0x10007cec                log
- .text.pow      0x10007de8      0x33c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-w_pow.o)
-                0x10007de8                pow
- *fill*         0x10008124        0x4 
+                0x10007b5e        0x2 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mlock.o)
+                0x10007b5e                __malloc_unlock
+ .text._read_r  0x10007b60       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-readr.o)
+                0x10007b60                _read_r
+ .text          0x10007b84      0x110 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_cmpdf2.o)
+                0x10007b84                __gtdf2
+                0x10007b84                __gedf2
+                0x10007b8c                __ltdf2
+                0x10007b8c                __ledf2
+                0x10007b94                __nedf2
+                0x10007b94                __eqdf2
+                0x10007b94                __cmpdf2
+                0x10007c10                __aeabi_cdrcmple
+                0x10007c20                __aeabi_cdcmpeq
+                0x10007c20                __aeabi_cdcmple
+                0x10007c30                __aeabi_dcmpeq
+                0x10007c44                __aeabi_dcmplt
+                0x10007c58                __aeabi_dcmple
+                0x10007c6c                __aeabi_dcmpge
+                0x10007c80                __aeabi_dcmpgt
+ .text          0x10007c94       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_unorddf2.o)
+                0x10007c94                __unorddf2
+                0x10007c94                __aeabi_dcmpun
+ .text          0x10007cc0       0x50 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_fixdfsi.o)
+                0x10007cc0                __aeabi_d2iz
+                0x10007cc0                __fixdfsi
+ .text._close   0x10007d10       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(close.o)
+                0x10007d10                _close
+ .text._fstat   0x10007d20       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(fstat.o)
+                0x10007d20                _fstat
+ .text._isatty  0x10007d30       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(isatty.o)
+                0x10007d30                _isatty
+ .text._lseek   0x10007d40       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(lseek.o)
+                0x10007d40                _lseek
+ .text._sbrk    0x10007d50       0x1c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(sbrk.o)
+                0x10007d50                _sbrk
+ .text.log      0x10007d6c       0xfc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-w_log.o)
+                0x10007d6c                log
+ .text.pow      0x10007e68      0x33c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-w_pow.o)
+                0x10007e68                pow
+ *fill*         0x100081a4        0x4 
  .text.__ieee754_log
-                0x10008128      0x394 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-e_log.o)
-                0x10008128                __ieee754_log
- *fill*         0x100084bc        0x4 
+                0x100081a8      0x394 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-e_log.o)
+                0x100081a8                __ieee754_log
+ *fill*         0x1000853c        0x4 
  .text.__ieee754_pow
-                0x100084c0      0xaa8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-e_pow.o)
-                0x100084c0                __ieee754_pow
+                0x10008540      0xaa8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-e_pow.o)
+                0x10008540                __ieee754_pow
  .text.__ieee754_sqrt
-                0x10008f68      0x180 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-e_sqrt.o)
-                0x10008f68                __ieee754_sqrt
- .text.fabs     0x100090e8        0x8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_fabs.o)
-                0x100090e8                fabs
- .text.finite   0x100090f0        0xc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_finite.o)
-                0x100090f0                finite
- .text.matherr  0x100090fc        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_matherr.o)
-                0x100090fc                matherr
- .text.nan      0x10009100        0xc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_nan.o)
-                0x10009100                nan
- .text.rint     0x1000910c      0x11c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_rint.o)
-                0x1000910c                rint
- .text.scalbn   0x10009228       0xfc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_scalbn.o)
-                0x10009228                scalbn
+                0x10008fe8      0x180 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-e_sqrt.o)
+                0x10008fe8                __ieee754_sqrt
+ .text.fabs     0x10009168        0x8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_fabs.o)
+                0x10009168                fabs
+ .text.finite   0x10009170        0xc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_finite.o)
+                0x10009170                finite
+ .text.matherr  0x1000917c        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_matherr.o)
+                0x1000917c                matherr
+ .text.nan      0x10009180        0xc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_nan.o)
+                0x10009180                nan
+ .text.rint     0x1000918c      0x11c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_rint.o)
+                0x1000918c                rint
+ .text.scalbn   0x100092a8       0xfc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_scalbn.o)
+                0x100092a8                scalbn
  .text.copysign
-                0x10009324       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_copysign.o)
-                0x10009324                copysign
- .text.__errno  0x10009334        0xc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc.a(lib_a-errno.o)
-                0x10009334                __errno
+                0x100093a4       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_copysign.o)
+                0x100093a4                copysign
+ .text.__errno  0x100093b4        0xc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc.a(lib_a-errno.o)
+                0x100093b4                __errno
  *(.init)
- .init          0x10009340        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crti.o
-                0x10009340                _init
- .init          0x10009344        0x8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtn.o
+ .init          0x100093c0        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crti.o
+                0x100093c0                _init
+ .init          0x100093c4        0x8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtn.o
  *(.fini)
- .fini          0x1000934c        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crti.o
-                0x1000934c                _fini
- .fini          0x10009350        0x8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtn.o
+ .fini          0x100093cc        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crti.o
+                0x100093cc                _fini
+ .fini          0x100093d0        0x8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtn.o
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -5889,205 +5893,212 @@ END GROUP
  *(.dtors)
  *(.rodata .rodata.* .constdata .constdata.* .conststring .conststring.*)
  .rodata.systemIpcPipeConfigCm4.12323
-                0x10009358       0x34 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+                0x100093d8       0x34 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
  .rodata.PrintDateAndTime.str1.4
-                0x1000938c       0x3d ./Source/main.o
- *fill*         0x100093c9        0x3 
+                0x1000940c       0x3d ./Source/main.o
+ *fill*         0x10009449        0x3 
  .rodata.ThermistorInfo.str1.4
-                0x100093cc       0x18 ./Source/main.o
+                0x1000944c        0xf ./Source/main.o
+ *fill*         0x1000945b        0x1 
  .rodata.main.str1.4
-                0x100093e4        0x9 ./Source/main.o
- *fill*         0x100093ed        0x3 
+                0x1000945c        0x9 ./Source/main.o
+ *fill*         0x10009465        0x3 
+ .rodata.switch_intr_config
+                0x10009468        0x8 ./Source/main.o
+                0x10009468                switch_intr_config
  .rodata.Bridge_UART_config
-                0x100093f0       0x40 ./GeneratedSource/cycfg_peripherals.o
-                0x100093f0                Bridge_UART_config
+                0x10009470       0x40 ./GeneratedSource/cycfg_peripherals.o
+                0x10009470                Bridge_UART_config
  .rodata.RTC_config
-                0x10009430       0x20 ./GeneratedSource/cycfg_peripherals.o
-                0x10009430                RTC_config
+                0x100094b0       0x20 ./GeneratedSource/cycfg_peripherals.o
+                0x100094b0                RTC_config
  .rodata.SAR_config
-                0x10009450       0x78 ./GeneratedSource/cycfg_peripherals.o
-                0x10009450                SAR_config
+                0x100094d0       0x78 ./GeneratedSource/cycfg_peripherals.o
+                0x100094d0                SAR_config
+ .rodata.PIN_SW_config
+                0x10009548       0x34 ./GeneratedSource/cycfg_pins.o
+                0x10009548                PIN_SW_config
  .rodata.Pin_Led_config
-                0x100094c8       0x34 ./GeneratedSource/cycfg_pins.o
-                0x100094c8                Pin_Led_config
+                0x1000957c       0x34 ./GeneratedSource/cycfg_pins.o
+                0x1000957c                Pin_Led_config
  .rodata.SWCLK_config
-                0x100094fc       0x34 ./GeneratedSource/cycfg_pins.o
-                0x100094fc                SWCLK_config
+                0x100095b0       0x34 ./GeneratedSource/cycfg_pins.o
+                0x100095b0                SWCLK_config
  .rodata.SWDIO_config
-                0x10009530       0x34 ./GeneratedSource/cycfg_pins.o
-                0x10009530                SWDIO_config
+                0x100095e4       0x34 ./GeneratedSource/cycfg_pins.o
+                0x100095e4                SWDIO_config
  .rodata.SWO_config
-                0x10009564       0x34 ./GeneratedSource/cycfg_pins.o
-                0x10009564                SWO_config
+                0x10009618       0x34 ./GeneratedSource/cycfg_pins.o
+                0x10009618                SWO_config
  .rodata.ioss_0_port_0_pin_0_config
-                0x10009598       0x34 ./GeneratedSource/cycfg_pins.o
-                0x10009598                ioss_0_port_0_pin_0_config
+                0x1000964c       0x34 ./GeneratedSource/cycfg_pins.o
+                0x1000964c                ioss_0_port_0_pin_0_config
  .rodata.ioss_0_port_0_pin_1_config
-                0x100095cc       0x34 ./GeneratedSource/cycfg_pins.o
-                0x100095cc                ioss_0_port_0_pin_1_config
+                0x10009680       0x34 ./GeneratedSource/cycfg_pins.o
+                0x10009680                ioss_0_port_0_pin_1_config
  .rodata.ioss_0_port_10_pin_0_config
-                0x10009600       0x34 ./GeneratedSource/cycfg_pins.o
-                0x10009600                ioss_0_port_10_pin_0_config
+                0x100096b4       0x34 ./GeneratedSource/cycfg_pins.o
+                0x100096b4                ioss_0_port_10_pin_0_config
  .rodata.ioss_0_port_10_pin_1_config
-                0x10009634       0x34 ./GeneratedSource/cycfg_pins.o
-                0x10009634                ioss_0_port_10_pin_1_config
+                0x100096e8       0x34 ./GeneratedSource/cycfg_pins.o
+                0x100096e8                ioss_0_port_10_pin_1_config
  .rodata.ioss_0_port_5_pin_0_config
-                0x10009668       0x34 ./GeneratedSource/cycfg_pins.o
-                0x10009668                ioss_0_port_5_pin_0_config
+                0x1000971c       0x34 ./GeneratedSource/cycfg_pins.o
+                0x1000971c                ioss_0_port_5_pin_0_config
  .rodata.ioss_0_port_5_pin_1_config
-                0x1000969c       0x34 ./GeneratedSource/cycfg_pins.o
-                0x1000969c                ioss_0_port_5_pin_1_config
+                0x10009750       0x34 ./GeneratedSource/cycfg_pins.o
+                0x10009750                ioss_0_port_5_pin_1_config
  .rodata.init_cycfg_platform.str1.4
-                0x100096d0       0x65 ./GeneratedSource/cycfg_platform.o
- *fill*         0x10009735        0x3 
+                0x10009784       0x65 ./GeneratedSource/cycfg_platform.o
+ *fill*         0x100097e9        0x3 
  .rodata.srss_0_clock_0_pll_0_pllConfig
-                0x10009738        0x5 ./GeneratedSource/cycfg_platform.o
- *fill*         0x1000973d        0x3 
+                0x100097ec        0x5 ./GeneratedSource/cycfg_platform.o
+ *fill*         0x100097f1        0x3 
  .rodata.cy_deviceIpBlockCfgPSoC6_02
-                0x10009740       0xb8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
-                0x10009740                cy_deviceIpBlockCfgPSoC6_02
+                0x100097f4       0xb8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
+                0x100097f4                cy_deviceIpBlockCfgPSoC6_02
  .rodata.Cy_GPIO_Pin_Init.str1.4
-                0x100097f8       0xc7 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
- *fill*         0x100098bf        0x1 
+                0x100098ac       0xc7 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
+ *fill*         0x10009973        0x1 
  .rodata.Cy_IPC_Pipe_EndpointInit.str1.4
-                0x100098c0       0xce E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
+                0x10009974       0xce E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
  .rodata.Cy_IPC_Sema_InitExt.str1.4
-                0x1000998e       0x66 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
- *fill*         0x1000998e        0x2 
+                0x10009a42       0x66 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
+ *fill*         0x10009a42        0x2 
  .rodata.Cy_RTC_SetDateAndTime.str1.4
-                0x10009990       0x61 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
- *fill*         0x100099f1        0x3 
+                0x10009a44       0x61 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+ *fill*         0x10009aa5        0x3 
  .rodata.RelativeToFixed.str1.4
-                0x100099f4       0x62 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
- *fill*         0x10009a56        0x2 
+                0x10009aa8       0x62 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+ *fill*         0x10009b0a        0x2 
  .rodata.cy_RTC_daysInMonthTbl
-                0x10009a58        0xc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
-                0x10009a58                cy_RTC_daysInMonthTbl
+                0x10009b0c        0xc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+                0x10009b0c                cy_RTC_daysInMonthTbl
  .rodata.Cy_SAR_Init.str1.4
-                0x10009a64       0x61 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
- *fill*         0x10009ac5        0x3 
+                0x10009b18       0x61 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
+ *fill*         0x10009b79        0x3 
  .rodata.Cy_SCB_UART_Init.str1.4
-                0x10009ac8       0x66 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
- *fill*         0x10009b2e        0x2 
+                0x10009b7c       0x66 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
+ *fill*         0x10009be2        0x2 
  .rodata.Cy_SysAnalog_Fast_Local
-                0x10009b30       0x10 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
-                0x10009b30                Cy_SysAnalog_Fast_Local
+                0x10009be4       0x10 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
+                0x10009be4                Cy_SysAnalog_Fast_Local
  .rodata.Cy_SysAnalog_Init.str1.4
-                0x10009b40       0x67 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
- *fill*         0x10009ba7        0x1 
+                0x10009bf4       0x67 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
+ *fill*         0x10009c5b        0x1 
  .rodata.Cy_SysClk_ClkPathGetSource.str1.4
-                0x10009ba8       0x64 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+                0x10009c5c       0x64 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
  .rodata.Cy_SysInt_SetVector.str1.4
-                0x10009c0c       0x64 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
+                0x10009cc0       0x64 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
  .rodata.Cy_SysPm_SetHibernateWakeupSource.str1.4
-                0x10009c70       0x63 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+                0x10009d24       0x63 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
  .rodata.Cy_SysPm_WriteVoltageBitForFlash.str1.4
-                0x10009cd3       0x66 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+                0x10009d87       0x66 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
  .rodata.Cy_IPC_Drv_LockRelease.str1.4
-                0x10009cd3       0x66 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
- *fill*         0x10009cd3        0x1 
+                0x10009d87       0x66 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
+ *fill*         0x10009d87        0x1 
  .rodata.Cy_IPC_Drv_ReadMsgWord.str1.4
-                0x10009cd4       0x65 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
- *fill*         0x10009d39        0x3 
+                0x10009d88       0x65 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
+ *fill*         0x10009ded        0x3 
  .rodata.Cy_Prot_ConfigBusMaster.str1.4
-                0x10009d3c       0x62 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
- *fill*         0x10009d9e        0x2 
+                0x10009df0       0x62 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
+ *fill*         0x10009e52        0x2 
  .rodata._global_impure_ptr
-                0x10009da0        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-impure.o)
-                0x10009da0                _global_impure_ptr
+                0x10009e54        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-impure.o)
+                0x10009e54                _global_impure_ptr
  .rodata._printf_float.str1.1
-                0x10009da4       0x12 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_float.o)
+                0x10009e58       0x12 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_float.o)
  .rodata._printf_i.str1.1
-                0x10009db6       0x22 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x10009e6a       0x22 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_i.o)
  .rodata._dtoa_r.str1.1
-                0x10009dd8        0xd c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-dtoa.o)
+                0x10009e8c        0xd c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-dtoa.o)
                                   0xf (size before relaxing)
- *fill*         0x10009de5        0x3 
+ *fill*         0x10009e99        0x3 
  .rodata.__sf_fake_stderr
-                0x10009de8       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
-                0x10009de8                __sf_fake_stderr
+                0x10009e9c       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
+                0x10009e9c                __sf_fake_stderr
  .rodata.__sf_fake_stdin
-                0x10009e08       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
-                0x10009e08                __sf_fake_stdin
+                0x10009ebc       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
+                0x10009ebc                __sf_fake_stdin
  .rodata.__sf_fake_stdout
-                0x10009e28       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
-                0x10009e28                __sf_fake_stdout
+                0x10009edc       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
+                0x10009edc                __sf_fake_stdout
  .rodata._setlocale_r.str1.1
-                0x10009e48        0x8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-locale.o)
+                0x10009efc        0x8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-locale.o)
                                   0x9 (size before relaxing)
  .rodata.str1.1
-                0x10009e50        0x2 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-locale.o)
- *fill*         0x10009e52        0x6 
+                0x10009f04        0x2 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-locale.o)
+ *fill*         0x10009f06        0x2 
  .rodata.__mprec_bigtens
-                0x10009e58       0x28 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
-                0x10009e58                __mprec_bigtens
+                0x10009f08       0x28 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
+                0x10009f08                __mprec_bigtens
  .rodata.__mprec_tens
-                0x10009e80       0xc8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
-                0x10009e80                __mprec_tens
+                0x10009f30       0xc8 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
+                0x10009f30                __mprec_tens
  .rodata.p05.7359
-                0x10009f48        0xc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
+                0x10009ff8        0xc c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
  .rodata._vfprintf_r.str1.1
-                0x10009f54       0x11 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf.o)
+                0x1000a004       0x11 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf.o)
  .rodata._ctype_
-                0x10009f65      0x101 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-ctype_.o)
-                0x10009f65                _ctype_
- *fill*         0x1000a066        0x2 
+                0x1000a015      0x101 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-ctype_.o)
+                0x1000a015                _ctype_
+ *fill*         0x1000a116        0x2 
  .rodata.log.str1.4
-                0x1000a068        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-w_log.o)
+                0x1000a118        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-w_log.o)
                                   0x5 (size before relaxing)
  .rodata.pow.str1.4
-                0x1000a06c        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-w_pow.o)
+                0x1000a11c        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-w_pow.o)
  .rodata.__ieee754_pow.str1.4
-                0x1000a070        0x1 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-e_pow.o)
- .rodata.TWO52  0x1000a070       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_rint.o)
+                0x1000a120        0x1 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-e_pow.o)
+ .rodata.TWO52  0x1000a120       0x10 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_rint.o)
  *(.eh_frame*)
- .eh_frame      0x1000a080        0x0 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
- .eh_frame      0x1000a080        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtend.o
+ .eh_frame      0x1000a130        0x0 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
+ .eh_frame      0x1000a130        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtend.o
 
-.glue_7         0x1000a084        0x0
- .glue_7        0x1000a084        0x0 linker stubs
+.glue_7         0x1000a134        0x0
+ .glue_7        0x1000a134        0x0 linker stubs
 
-.glue_7t        0x1000a084        0x0
- .glue_7t       0x1000a084        0x0 linker stubs
+.glue_7t        0x1000a134        0x0
+ .glue_7t       0x1000a134        0x0 linker stubs
 
-.vfp11_veneer   0x1000a084        0x0
- .vfp11_veneer  0x1000a084        0x0 linker stubs
+.vfp11_veneer   0x1000a134        0x0
+ .vfp11_veneer  0x1000a134        0x0 linker stubs
 
-.v4_bx          0x1000a084        0x0
- .v4_bx         0x1000a084        0x0 linker stubs
+.v4_bx          0x1000a134        0x0
+ .v4_bx         0x1000a134        0x0 linker stubs
 
-.iplt           0x1000a084        0x0
- .iplt          0x1000a084        0x0 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
+.iplt           0x1000a134        0x0
+ .iplt          0x1000a134        0x0 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
 
-.rel.dyn        0x1000a084        0x0
- .rel.iplt      0x1000a084        0x0 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
+.rel.dyn        0x1000a134        0x0
+ .rel.iplt      0x1000a134        0x0 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x1000a084                __exidx_start = .
+                0x1000a134                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x1000a084                __exidx_end = .
+                0x1000a134                __exidx_end = .
 
-.copy.table     0x1000a084       0x18
-                0x1000a084                . = ALIGN (0x4)
-                0x1000a084                __copy_table_start__ = .
-                0x1000a084        0x4 LONG 0x10002000 __Vectors
-                0x1000a088        0x4 LONG 0x8002000 __ram_vectors_start__
-                0x1000a08c        0x4 LONG 0x2e0 (__Vectors_End - __Vectors)
-                0x1000a090        0x4 LONG 0x1000a0a4 __etext
-                0x1000a094        0x4 LONG 0x80022e0 __data_start__
-                0x1000a098        0x4 LONG 0x40c (__data_end__ - __data_start__)
-                0x1000a09c                __copy_table_end__ = .
+.copy.table     0x1000a134       0x18
+                0x1000a134                . = ALIGN (0x4)
+                0x1000a134                __copy_table_start__ = .
+                0x1000a134        0x4 LONG 0x10002000 __Vectors
+                0x1000a138        0x4 LONG 0x8002000 __ram_vectors_start__
+                0x1000a13c        0x4 LONG 0x2e0 (__Vectors_End - __Vectors)
+                0x1000a140        0x4 LONG 0x1000a154 __etext
+                0x1000a144        0x4 LONG 0x80022e0 __data_start__
+                0x1000a148        0x4 LONG 0x410 (__data_end__ - __data_start__)
+                0x1000a14c                __copy_table_end__ = .
 
-.zero.table     0x1000a09c        0x8
-                0x1000a09c                . = ALIGN (0x4)
-                0x1000a09c                __zero_table_start__ = .
-                0x1000a09c        0x4 LONG 0x8002784 __bss_start__
-                0x1000a0a0        0x4 LONG 0x2a0 (__bss_end__ - __bss_start__)
-                0x1000a0a4                __zero_table_end__ = .
-                0x1000a0a4                __etext = .
+.zero.table     0x1000a14c        0x8
+                0x1000a14c                . = ALIGN (0x4)
+                0x1000a14c                __zero_table_start__ = .
+                0x1000a14c        0x4 LONG 0x8002784 __bss_start__
+                0x1000a150        0x4 LONG 0x2a0 (__bss_end__ - __bss_start__)
+                0x1000a154                __zero_table_end__ = .
+                0x1000a154                __etext = .
 
 .ramVectors     0x08002000      0x2e0
                 0x08002000                __ram_vectors_start__ = .
@@ -6096,7 +6107,7 @@ END GROUP
                 0x08002000                __ramVectors
                 0x080022e0                __ram_vectors_end__ = .
 
-.data           0x080022e0      0x40c load address 0x1000a0a4
+.data           0x080022e0      0x410 load address 0x1000a154
                 0x080022e0                __data_start__ = .
  *(vtable)
  *(.data*)
@@ -6122,54 +6133,58 @@ END GROUP
                 0x080022f8        0x1 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
                 0x080022f8                cy_delayFreqMhz
  *fill*         0x080022f9        0x3 
- .data.secPrev.16380
+ .data.secPrev.16385
                 0x080022fc        0x4 ./Source/main.o
+ .data.temperature_sw
+                0x08002300        0x1 ./Source/main.o
+                0x08002300                temperature_sw
+ *fill*         0x08002301        0x3 
  .data._impure_ptr
-                0x08002300        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-impure.o)
-                0x08002300                _impure_ptr
+                0x08002304        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-impure.o)
+                0x08002304                _impure_ptr
  .data.impure_data
-                0x08002304       0x60 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-impure.o)
+                0x08002308       0x60 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-impure.o)
  .data.__global_locale
-                0x08002364      0x16c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-locale.o)
-                0x08002364                __global_locale
+                0x08002368      0x16c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-locale.o)
+                0x08002368                __global_locale
  .data.__fdlib_version
-                0x080024d0        0x1 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_lib_ver.o)
-                0x080024d0                __fdlib_version
-                0x080024d4                . = ALIGN (0x4)
- *fill*         0x080024d1        0x3 
-                0x080024d4                PROVIDE (__preinit_array_start, .)
+                0x080024d4        0x1 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_lib_ver.o)
+                0x080024d4                __fdlib_version
+                0x080024d8                . = ALIGN (0x4)
+ *fill*         0x080024d5        0x3 
+                0x080024d8                PROVIDE (__preinit_array_start, .)
  *(.preinit_array)
-                0x080024d4                PROVIDE (__preinit_array_end, .)
-                0x080024d4                . = ALIGN (0x4)
-                0x080024d4                PROVIDE (__init_array_start, .)
+                0x080024d8                PROVIDE (__preinit_array_end, .)
+                0x080024d8                . = ALIGN (0x4)
+                0x080024d8                PROVIDE (__init_array_start, .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x080024d4        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
-                0x080024d8                PROVIDE (__init_array_end, .)
-                0x080024d8                . = ALIGN (0x4)
+ .init_array    0x080024d8        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
+                0x080024dc                PROVIDE (__init_array_end, .)
+                0x080024dc                . = ALIGN (0x4)
                 [!provide]                PROVIDE (__fini_array_start, .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
- .fini_array    0x080024d8        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
+ .fini_array    0x080024dc        0x4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
                 [!provide]                PROVIDE (__fini_array_end, .)
  *(.jcr*)
-                0x080024dc                . = ALIGN (0x4)
+                0x080024e0                . = ALIGN (0x4)
  *(.cy_ramfunc*)
- .cy_ramfunc    0x080024dc      0x210 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
-                0x080026ec                . = ALIGN (0x4)
-                0x080026ec                __data_end__ = .
+ .cy_ramfunc    0x080024e0      0x210 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+                0x080026f0                . = ALIGN (0x4)
+                0x080026f0                __data_end__ = .
 
-.igot.plt       0x080026ec        0x0 load address 0x1000a4b0
- .igot.plt      0x080026ec        0x0 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
+.igot.plt       0x080026f0        0x0 load address 0x1000a564
+ .igot.plt      0x080026f0        0x0 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
 
-.noinit         0x080026f0       0x94 load address 0x1000a4b8
+.noinit         0x080026f0       0x94 load address 0x1000a568
  *(.noinit)
  .noinit        0x080026f0       0x94 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
                 0x080026f0                cy_assertFileName
                 0x08002708                cy_assertLine
                 0x0800270c                cy_faultFrame
 
-.bss            0x08002784      0x2a0 load address 0x1000a54c
+.bss            0x08002784      0x2a0 load address 0x1000a5fc
                 0x08002784                . = ALIGN (0x4)
                 0x08002784                __bss_start__ = .
  *(.bss*)
@@ -6178,7 +6193,7 @@ END GROUP
                 0x080027a0      0x160 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
  .bss.systemIpcPipeSysCbArray.12322
                 0x08002900       0x20 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .bss.access.16379
+ .bss.access.16384
                 0x08002920        0x1 ./Source/main.o
  *fill*         0x08002921        0x3 
  .bss.cy_ipc_pipe_epArray
@@ -6497,91 +6512,91 @@ OUTPUT(CypressTest_mainapp.elf elf32-littlearm)
  .comment       0x0000007f       0x80 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
  .comment       0x0000007f       0x80 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
 
-.debug_info     0x00000000    0x3fe9c
- .debug_info    0x00000000     0x3dfd ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
- .debug_info    0x00003dfd       0x26 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/gcc/startup_psoc6_02_cm4.o
- .debug_info    0x00003e23     0x2371 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_info    0x00006194     0x4ef6 ./Source/main.o
- .debug_info    0x0000b08a     0x3bb8 ./Source/stdio_user.o
- .debug_info    0x0000ec42     0x3e7d ./GeneratedSource/Thermistor.o
- .debug_info    0x00012abf     0x358a ./GeneratedSource/cycfg.o
- .debug_info    0x00016049     0x1103 ./GeneratedSource/cycfg_clocks.o
- .debug_info    0x0001714c     0x1c65 ./GeneratedSource/cycfg_peripherals.o
- .debug_info    0x00018db1     0x32f1 ./GeneratedSource/cycfg_pins.o
- .debug_info    0x0001c0a2     0x42da ./GeneratedSource/cycfg_platform.o
- .debug_info    0x0002037c      0x4c7 ./GeneratedSource/cycfg_routing.o
- .debug_info    0x00020843       0x26 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib_gcc.o)
- .debug_info    0x00020869      0x578 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
- .debug_info    0x00020de1     0x1ad2 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
- .debug_info    0x000228b3     0x1ca9 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
- .debug_info    0x0002455c     0x1a83 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
- .debug_info    0x00025fdf     0x3756 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
- .debug_info    0x00029735     0x1fe4 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
- .debug_info    0x0002b719     0x1784 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
- .debug_info    0x0002ce9d     0x2f80 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
- .debug_info    0x0002fe1d      0xe7d E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
- .debug_info    0x00030c9a     0x2ed8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
- .debug_info    0x00033b72     0x1048 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
- .debug_info    0x00034bba     0x2cb7 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
- .debug_info    0x00037871     0x4580 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
- .debug_info    0x0003bdf1      0xf47 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
- .debug_info    0x0003cd38     0x3164 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
+.debug_info     0x00000000    0x405e0
+ .debug_info    0x00000000     0x3e08 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
+ .debug_info    0x00003e08       0x26 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/gcc/startup_psoc6_02_cm4.o
+ .debug_info    0x00003e2e     0x2371 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_info    0x0000619f     0x55d4 ./Source/main.o
+ .debug_info    0x0000b773     0x3bc3 ./Source/stdio_user.o
+ .debug_info    0x0000f336     0x3e88 ./GeneratedSource/Thermistor.o
+ .debug_info    0x000131be     0x3595 ./GeneratedSource/cycfg.o
+ .debug_info    0x00016753     0x1103 ./GeneratedSource/cycfg_clocks.o
+ .debug_info    0x00017856     0x1c65 ./GeneratedSource/cycfg_peripherals.o
+ .debug_info    0x000194bb     0x332b ./GeneratedSource/cycfg_pins.o
+ .debug_info    0x0001c7e6     0x42da ./GeneratedSource/cycfg_platform.o
+ .debug_info    0x00020ac0      0x4c7 ./GeneratedSource/cycfg_routing.o
+ .debug_info    0x00020f87       0x26 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib_gcc.o)
+ .debug_info    0x00020fad      0x578 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
+ .debug_info    0x00021525     0x1ad2 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
+ .debug_info    0x00022ff7     0x1ca9 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
+ .debug_info    0x00024ca0     0x1a83 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
+ .debug_info    0x00026723     0x3756 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+ .debug_info    0x00029e79     0x1fe4 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
+ .debug_info    0x0002be5d     0x1784 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
+ .debug_info    0x0002d5e1     0x2f80 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
+ .debug_info    0x00030561      0xe7d E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
+ .debug_info    0x000313de     0x2ed8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+ .debug_info    0x000342b6     0x1048 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
+ .debug_info    0x000352fe     0x2cb7 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+ .debug_info    0x00037fb5     0x4580 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+ .debug_info    0x0003c535      0xf47 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
+ .debug_info    0x0003d47c     0x3164 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
 
-.debug_abbrev   0x00000000     0x4475
+.debug_abbrev   0x00000000     0x44b4
  .debug_abbrev  0x00000000      0x247 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
  .debug_abbrev  0x00000247       0x14 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/gcc/startup_psoc6_02_cm4.o
  .debug_abbrev  0x0000025b      0x287 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_abbrev  0x000004e2      0x388 ./Source/main.o
- .debug_abbrev  0x0000086a      0x235 ./Source/stdio_user.o
- .debug_abbrev  0x00000a9f      0x28e ./GeneratedSource/Thermistor.o
- .debug_abbrev  0x00000d2d      0x181 ./GeneratedSource/cycfg.o
- .debug_abbrev  0x00000eae      0x1f2 ./GeneratedSource/cycfg_clocks.o
- .debug_abbrev  0x000010a0      0x215 ./GeneratedSource/cycfg_peripherals.o
- .debug_abbrev  0x000012b5      0x1a9 ./GeneratedSource/cycfg_pins.o
- .debug_abbrev  0x0000145e      0x2fa ./GeneratedSource/cycfg_platform.o
- .debug_abbrev  0x00001758       0xc4 ./GeneratedSource/cycfg_routing.o
- .debug_abbrev  0x0000181c       0x14 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib_gcc.o)
- .debug_abbrev  0x00001830       0xb8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
- .debug_abbrev  0x000018e8      0x2a0 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
- .debug_abbrev  0x00001b88      0x390 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
- .debug_abbrev  0x00001f18      0x346 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
- .debug_abbrev  0x0000225e      0x422 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
- .debug_abbrev  0x00002680      0x303 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
- .debug_abbrev  0x00002983      0x30c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
- .debug_abbrev  0x00002c8f      0x395 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
- .debug_abbrev  0x00003024      0x1dd E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
- .debug_abbrev  0x00003201      0x44d E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
- .debug_abbrev  0x0000364e      0x266 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
- .debug_abbrev  0x000038b4      0x383 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
- .debug_abbrev  0x00003c37      0x3af E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
- .debug_abbrev  0x00003fe6      0x1e7 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
- .debug_abbrev  0x000041cd      0x2a8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
+ .debug_abbrev  0x000004e2      0x3c7 ./Source/main.o
+ .debug_abbrev  0x000008a9      0x235 ./Source/stdio_user.o
+ .debug_abbrev  0x00000ade      0x28e ./GeneratedSource/Thermistor.o
+ .debug_abbrev  0x00000d6c      0x181 ./GeneratedSource/cycfg.o
+ .debug_abbrev  0x00000eed      0x1f2 ./GeneratedSource/cycfg_clocks.o
+ .debug_abbrev  0x000010df      0x215 ./GeneratedSource/cycfg_peripherals.o
+ .debug_abbrev  0x000012f4      0x1a9 ./GeneratedSource/cycfg_pins.o
+ .debug_abbrev  0x0000149d      0x2fa ./GeneratedSource/cycfg_platform.o
+ .debug_abbrev  0x00001797       0xc4 ./GeneratedSource/cycfg_routing.o
+ .debug_abbrev  0x0000185b       0x14 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib_gcc.o)
+ .debug_abbrev  0x0000186f       0xb8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
+ .debug_abbrev  0x00001927      0x2a0 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
+ .debug_abbrev  0x00001bc7      0x390 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
+ .debug_abbrev  0x00001f57      0x346 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
+ .debug_abbrev  0x0000229d      0x422 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+ .debug_abbrev  0x000026bf      0x303 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
+ .debug_abbrev  0x000029c2      0x30c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
+ .debug_abbrev  0x00002cce      0x395 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
+ .debug_abbrev  0x00003063      0x1dd E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
+ .debug_abbrev  0x00003240      0x44d E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+ .debug_abbrev  0x0000368d      0x266 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
+ .debug_abbrev  0x000038f3      0x383 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+ .debug_abbrev  0x00003c76      0x3af E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+ .debug_abbrev  0x00004025      0x1e7 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
+ .debug_abbrev  0x0000420c      0x2a8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
 
-.debug_loc      0x00000000     0xcf74
+.debug_loc      0x00000000     0xcfbf
  .debug_loc     0x00000000      0x167 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
  .debug_loc     0x00000167      0x225 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_loc     0x0000038c       0xfb ./Source/main.o
- .debug_loc     0x00000487       0x87 ./Source/stdio_user.o
- .debug_loc     0x0000050e       0xf9 ./GeneratedSource/Thermistor.o
- .debug_loc     0x00000607      0x16d ./GeneratedSource/cycfg_clocks.o
- .debug_loc     0x00000774       0x95 ./GeneratedSource/cycfg_peripherals.o
- .debug_loc     0x00000809      0x2fa ./GeneratedSource/cycfg_platform.o
- .debug_loc     0x00000b03      0x9d8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
- .debug_loc     0x000014db      0x9d6 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
- .debug_loc     0x00001eb1      0x83a E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
- .debug_loc     0x000026eb     0x2477 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
- .debug_loc     0x00004b62     0x11e8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
- .debug_loc     0x00005d4a      0x651 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
- .debug_loc     0x0000639b     0x1631 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
- .debug_loc     0x000079cc       0x83 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
- .debug_loc     0x00007a4f     0x1c94 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
- .debug_loc     0x000096e3      0x224 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
- .debug_loc     0x00009907      0x18f E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
- .debug_loc     0x00009a96     0x111c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
- .debug_loc     0x0000abb2      0x3e0 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
- .debug_loc     0x0000af92     0x1fe2 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
+ .debug_loc     0x0000038c      0x146 ./Source/main.o
+ .debug_loc     0x000004d2       0x87 ./Source/stdio_user.o
+ .debug_loc     0x00000559       0xf9 ./GeneratedSource/Thermistor.o
+ .debug_loc     0x00000652      0x16d ./GeneratedSource/cycfg_clocks.o
+ .debug_loc     0x000007bf       0x95 ./GeneratedSource/cycfg_peripherals.o
+ .debug_loc     0x00000854      0x2fa ./GeneratedSource/cycfg_platform.o
+ .debug_loc     0x00000b4e      0x9d8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
+ .debug_loc     0x00001526      0x9d6 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
+ .debug_loc     0x00001efc      0x83a E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
+ .debug_loc     0x00002736     0x2477 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+ .debug_loc     0x00004bad     0x11e8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
+ .debug_loc     0x00005d95      0x651 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
+ .debug_loc     0x000063e6     0x1631 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
+ .debug_loc     0x00007a17       0x83 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
+ .debug_loc     0x00007a9a     0x1c94 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+ .debug_loc     0x0000972e      0x224 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
+ .debug_loc     0x00009952      0x18f E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+ .debug_loc     0x00009ae1     0x111c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+ .debug_loc     0x0000abfd      0x3e0 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
+ .debug_loc     0x0000afdd     0x1fe2 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
 
-.debug_aranges  0x00000000      0xa68
+.debug_aranges  0x00000000      0xa70
  .debug_aranges
                 0x00000000       0x28 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
  .debug_aranges
@@ -6589,85 +6604,85 @@ OUTPUT(CypressTest_mainapp.elf elf32-littlearm)
  .debug_aranges
                 0x00000048       0x40 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
  .debug_aranges
-                0x00000088       0x30 ./Source/main.o
+                0x00000088       0x38 ./Source/main.o
  .debug_aranges
-                0x000000b8       0x28 ./Source/stdio_user.o
+                0x000000c0       0x28 ./Source/stdio_user.o
  .debug_aranges
-                0x000000e0       0x28 ./GeneratedSource/Thermistor.o
+                0x000000e8       0x28 ./GeneratedSource/Thermistor.o
  .debug_aranges
-                0x00000108       0x20 ./GeneratedSource/cycfg.o
+                0x00000110       0x20 ./GeneratedSource/cycfg.o
  .debug_aranges
-                0x00000128       0x20 ./GeneratedSource/cycfg_clocks.o
+                0x00000130       0x20 ./GeneratedSource/cycfg_clocks.o
  .debug_aranges
-                0x00000148       0x20 ./GeneratedSource/cycfg_peripherals.o
+                0x00000150       0x20 ./GeneratedSource/cycfg_peripherals.o
  .debug_aranges
-                0x00000168       0x20 ./GeneratedSource/cycfg_pins.o
+                0x00000170       0x20 ./GeneratedSource/cycfg_pins.o
  .debug_aranges
-                0x00000188       0x28 ./GeneratedSource/cycfg_platform.o
+                0x00000190       0x28 ./GeneratedSource/cycfg_platform.o
  .debug_aranges
-                0x000001b0       0x20 ./GeneratedSource/cycfg_routing.o
+                0x000001b8       0x20 ./GeneratedSource/cycfg_routing.o
  .debug_aranges
-                0x000001d0       0x20 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib_gcc.o)
+                0x000001d8       0x20 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib_gcc.o)
  .debug_aranges
-                0x000001f0       0x20 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
+                0x000001f8       0x20 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
  .debug_aranges
-                0x00000210       0x48 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
+                0x00000218       0x48 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
  .debug_aranges
-                0x00000258       0x68 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
+                0x00000260       0x68 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
  .debug_aranges
-                0x000002c0       0x48 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
+                0x000002c8       0x48 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
  .debug_aranges
-                0x00000308       0xf8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+                0x00000310       0xf8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
  .debug_aranges
-                0x00000400       0xe0 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
+                0x00000408       0xe0 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
  .debug_aranges
-                0x000004e0       0x68 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
+                0x000004e8       0x68 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
  .debug_aranges
-                0x00000548       0xc8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
+                0x00000550       0xc8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
  .debug_aranges
-                0x00000610       0x20 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
+                0x00000618       0x20 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
  .debug_aranges
-                0x00000630       0xb0 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+                0x00000638       0xb0 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
  .debug_aranges
-                0x000006e0       0x30 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
+                0x000006e8       0x30 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
  .debug_aranges
-                0x00000710       0x78 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+                0x00000718       0x78 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
  .debug_aranges
-                0x00000788      0x118 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+                0x00000790      0x118 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
  .debug_aranges
-                0x000008a0       0x30 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
+                0x000008a8       0x30 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
  .debug_aranges
-                0x000008d0      0x198 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
+                0x000008d8      0x198 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
 
-.debug_ranges   0x00000000     0x15f0
+.debug_ranges   0x00000000     0x15f8
  .debug_ranges  0x00000000       0x18 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
  .debug_ranges  0x00000018       0x48 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_ranges  0x00000060       0x20 ./Source/main.o
- .debug_ranges  0x00000080       0x18 ./Source/stdio_user.o
- .debug_ranges  0x00000098       0x18 ./GeneratedSource/Thermistor.o
- .debug_ranges  0x000000b0       0x10 ./GeneratedSource/cycfg.o
- .debug_ranges  0x000000c0       0x10 ./GeneratedSource/cycfg_clocks.o
- .debug_ranges  0x000000d0       0x10 ./GeneratedSource/cycfg_peripherals.o
- .debug_ranges  0x000000e0       0x10 ./GeneratedSource/cycfg_pins.o
- .debug_ranges  0x000000f0       0xa0 ./GeneratedSource/cycfg_platform.o
- .debug_ranges  0x00000190       0x10 ./GeneratedSource/cycfg_routing.o
- .debug_ranges  0x000001a0       0x10 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
- .debug_ranges  0x000001b0      0x110 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
- .debug_ranges  0x000002c0       0xb8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
- .debug_ranges  0x00000378       0x80 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
- .debug_ranges  0x000003f8      0x478 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
- .debug_ranges  0x00000870       0xd0 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
- .debug_ranges  0x00000940      0x118 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
- .debug_ranges  0x00000a58      0x3c8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
- .debug_ranges  0x00000e20       0x10 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
- .debug_ranges  0x00000e30      0x280 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
- .debug_ranges  0x000010b0       0x38 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
- .debug_ranges  0x000010e8       0x68 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
- .debug_ranges  0x00001150      0x2b0 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
- .debug_ranges  0x00001400       0x50 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
- .debug_ranges  0x00001450      0x1a0 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
+ .debug_ranges  0x00000060       0x28 ./Source/main.o
+ .debug_ranges  0x00000088       0x18 ./Source/stdio_user.o
+ .debug_ranges  0x000000a0       0x18 ./GeneratedSource/Thermistor.o
+ .debug_ranges  0x000000b8       0x10 ./GeneratedSource/cycfg.o
+ .debug_ranges  0x000000c8       0x10 ./GeneratedSource/cycfg_clocks.o
+ .debug_ranges  0x000000d8       0x10 ./GeneratedSource/cycfg_peripherals.o
+ .debug_ranges  0x000000e8       0x10 ./GeneratedSource/cycfg_pins.o
+ .debug_ranges  0x000000f8       0xa0 ./GeneratedSource/cycfg_platform.o
+ .debug_ranges  0x00000198       0x10 ./GeneratedSource/cycfg_routing.o
+ .debug_ranges  0x000001a8       0x10 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
+ .debug_ranges  0x000001b8      0x110 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
+ .debug_ranges  0x000002c8       0xb8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
+ .debug_ranges  0x00000380       0x80 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
+ .debug_ranges  0x00000400      0x478 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+ .debug_ranges  0x00000878       0xd0 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
+ .debug_ranges  0x00000948      0x118 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
+ .debug_ranges  0x00000a60      0x3c8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
+ .debug_ranges  0x00000e28       0x10 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
+ .debug_ranges  0x00000e38      0x280 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+ .debug_ranges  0x000010b8       0x38 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
+ .debug_ranges  0x000010f0       0x68 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+ .debug_ranges  0x00001158      0x2b0 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+ .debug_ranges  0x00001408       0x50 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
+ .debug_ranges  0x00001458      0x1a0 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
 
-.debug_macro    0x00000000    0x24dae
+.debug_macro    0x00000000    0x24deb
  .debug_macro   0x00000000      0x574 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
  .debug_macro   0x00000574      0xa5a ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
  .debug_macro   0x00000fce       0x22 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
@@ -6770,237 +6785,237 @@ OUTPUT(CypressTest_mainapp.elf elf32-littlearm)
  .debug_macro   0x0001cd28       0x76 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
  .debug_macro   0x0001cd9e      0x2e3 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
  .debug_macro   0x0001d081       0x2e ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
- .debug_macro   0x0001d0af      0x1a4 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
- .debug_macro   0x0001d253       0x2e ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
- .debug_macro   0x0001d281       0x27 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
- .debug_macro   0x0001d2a8      0x418 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_macro   0x0001d6c0       0x87 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_macro   0x0001d747       0x51 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_macro   0x0001d798       0x97 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_macro   0x0001d82f      0x174 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_macro   0x0001d9a3       0x1c ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_macro   0x0001d9bf      0x512 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_macro   0x0001ded1      0x630 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_macro   0x0001e501       0xdf ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_macro   0x0001e5e0      0x3a7 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_macro   0x0001e987       0x5f ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_macro   0x0001e9e6       0x43 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_macro   0x0001ea29       0x22 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_macro   0x0001ea4b       0xcf ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_macro   0x0001eb1a       0x7b ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_macro   0x0001eb95      0x5a8 ./Source/main.o
- .debug_macro   0x0001f13d       0x2d ./Source/main.o
- .debug_macro   0x0001f16a       0x58 ./Source/main.o
- .debug_macro   0x0001f1c2       0x35 ./Source/main.o
- .debug_macro   0x0001f1f7      0x32a ./Source/main.o
- .debug_macro   0x0001f521       0x1c ./Source/main.o
- .debug_macro   0x0001f53d      0x1e1 ./Source/main.o
- .debug_macro   0x0001f71e       0x3a ./Source/main.o
- .debug_macro   0x0001f758      0x424 ./Source/stdio_user.o
- .debug_macro   0x0001fb7c      0x4bb ./GeneratedSource/Thermistor.o
- .debug_macro   0x00020037       0x16 ./GeneratedSource/Thermistor.o
- .debug_macro   0x0002004d      0x413 ./GeneratedSource/cycfg.o
- .debug_macro   0x00020460      0x355 ./GeneratedSource/cycfg_clocks.o
- .debug_macro   0x000207b5      0x3b5 ./GeneratedSource/cycfg_peripherals.o
- .debug_macro   0x00020b6a       0x6d ./GeneratedSource/cycfg_peripherals.o
- .debug_macro   0x00020bd7      0x354 ./GeneratedSource/cycfg_pins.o
- .debug_macro   0x00020f2b      0x434 ./GeneratedSource/cycfg_platform.o
- .debug_macro   0x0002135f      0x260 ./GeneratedSource/cycfg_routing.o
- .debug_macro   0x000215bf       0x28 ./GeneratedSource/cycfg_routing.o
- .debug_macro   0x000215e7      0x186 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
- .debug_macro   0x0002176d      0x359 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
- .debug_macro   0x00021ac6      0x370 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
- .debug_macro   0x00021e36      0x425 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
- .debug_macro   0x0002225b       0x10 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
- .debug_macro   0x0002226b      0x35e E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
- .debug_macro   0x000225c9      0x365 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
- .debug_macro   0x0002292e      0x35d E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
- .debug_macro   0x00022c8b      0x36e E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
- .debug_macro   0x00022ff9      0x35e E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
- .debug_macro   0x00023357      0x53d E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
- .debug_macro   0x00023894       0x16 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
- .debug_macro   0x000238aa       0x16 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
- .debug_macro   0x000238c0       0x29 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
- .debug_macro   0x000238e9      0x34d E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
- .debug_macro   0x00023c36      0x437 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
- .debug_macro   0x0002406d      0x52d E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
- .debug_macro   0x0002459a      0x170 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
- .debug_macro   0x0002470a      0x34c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
- .debug_macro   0x00024a56      0x358 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
+ .debug_macro   0x0001d0af      0x1db ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
+ .debug_macro   0x0001d28a       0x2e ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
+ .debug_macro   0x0001d2b8       0x27 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
+ .debug_macro   0x0001d2df      0x418 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_macro   0x0001d6f7       0x87 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_macro   0x0001d77e       0x51 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_macro   0x0001d7cf       0x97 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_macro   0x0001d866      0x174 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_macro   0x0001d9da       0x1c ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_macro   0x0001d9f6      0x512 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_macro   0x0001df08      0x630 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_macro   0x0001e538       0xdf ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_macro   0x0001e617      0x3a7 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_macro   0x0001e9be       0x5f ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_macro   0x0001ea1d       0x43 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_macro   0x0001ea60       0x22 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_macro   0x0001ea82       0xcf ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_macro   0x0001eb51       0x7b ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_macro   0x0001ebcc      0x5ae ./Source/main.o
+ .debug_macro   0x0001f17a       0x2d ./Source/main.o
+ .debug_macro   0x0001f1a7       0x58 ./Source/main.o
+ .debug_macro   0x0001f1ff       0x35 ./Source/main.o
+ .debug_macro   0x0001f234      0x32a ./Source/main.o
+ .debug_macro   0x0001f55e       0x1c ./Source/main.o
+ .debug_macro   0x0001f57a      0x1e1 ./Source/main.o
+ .debug_macro   0x0001f75b       0x3a ./Source/main.o
+ .debug_macro   0x0001f795      0x424 ./Source/stdio_user.o
+ .debug_macro   0x0001fbb9      0x4bb ./GeneratedSource/Thermistor.o
+ .debug_macro   0x00020074       0x16 ./GeneratedSource/Thermistor.o
+ .debug_macro   0x0002008a      0x413 ./GeneratedSource/cycfg.o
+ .debug_macro   0x0002049d      0x355 ./GeneratedSource/cycfg_clocks.o
+ .debug_macro   0x000207f2      0x3b5 ./GeneratedSource/cycfg_peripherals.o
+ .debug_macro   0x00020ba7       0x6d ./GeneratedSource/cycfg_peripherals.o
+ .debug_macro   0x00020c14      0x354 ./GeneratedSource/cycfg_pins.o
+ .debug_macro   0x00020f68      0x434 ./GeneratedSource/cycfg_platform.o
+ .debug_macro   0x0002139c      0x260 ./GeneratedSource/cycfg_routing.o
+ .debug_macro   0x000215fc       0x28 ./GeneratedSource/cycfg_routing.o
+ .debug_macro   0x00021624      0x186 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
+ .debug_macro   0x000217aa      0x359 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
+ .debug_macro   0x00021b03      0x370 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
+ .debug_macro   0x00021e73      0x425 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
+ .debug_macro   0x00022298       0x10 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
+ .debug_macro   0x000222a8      0x35e E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+ .debug_macro   0x00022606      0x365 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
+ .debug_macro   0x0002296b      0x35d E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
+ .debug_macro   0x00022cc8      0x36e E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
+ .debug_macro   0x00023036      0x35e E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
+ .debug_macro   0x00023394      0x53d E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+ .debug_macro   0x000238d1       0x16 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+ .debug_macro   0x000238e7       0x16 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+ .debug_macro   0x000238fd       0x29 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+ .debug_macro   0x00023926      0x34d E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
+ .debug_macro   0x00023c73      0x437 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+ .debug_macro   0x000240aa      0x52d E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+ .debug_macro   0x000245d7      0x170 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+ .debug_macro   0x00024747      0x34c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
+ .debug_macro   0x00024a93      0x358 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
 
-.debug_line     0x00000000    0x10716
+.debug_line     0x00000000    0x1076a
  .debug_line    0x00000000      0xa64 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
  .debug_line    0x00000a64       0xc7 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/gcc/startup_psoc6_02_cm4.o
  .debug_line    0x00000b2b      0x89c ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_line    0x000013c7      0xa52 ./Source/main.o
- .debug_line    0x00001e19      0x8c3 ./Source/stdio_user.o
- .debug_line    0x000026dc      0x8d1 ./GeneratedSource/Thermistor.o
- .debug_line    0x00002fad      0x837 ./GeneratedSource/cycfg.o
- .debug_line    0x000037e4      0x7b3 ./GeneratedSource/cycfg_clocks.o
- .debug_line    0x00003f97      0x7ef ./GeneratedSource/cycfg_peripherals.o
- .debug_line    0x00004786      0x78f ./GeneratedSource/cycfg_pins.o
- .debug_line    0x00004f15      0x8b1 ./GeneratedSource/cycfg_platform.o
- .debug_line    0x000057c6      0x642 ./GeneratedSource/cycfg_routing.o
- .debug_line    0x00005e08       0xac E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib_gcc.o)
- .debug_line    0x00005eb4      0x4f2 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
- .debug_line    0x000063a6      0x975 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
- .debug_line    0x00006d1b      0x9da E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
- .debug_line    0x000076f5      0x978 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
- .debug_line    0x0000806d     0x1240 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
- .debug_line    0x000092ad      0xb59 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
- .debug_line    0x00009e06      0x9a9 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
- .debug_line    0x0000a7af      0xf98 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
- .debug_line    0x0000b747      0x7ce E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
- .debug_line    0x0000bf15      0xfb4 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
- .debug_line    0x0000cec9      0x7cb E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
- .debug_line    0x0000d694      0x942 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
- .debug_line    0x0000dfd6      0xf5e E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
- .debug_line    0x0000ef34      0x7f4 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
- .debug_line    0x0000f728      0xfee E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
+ .debug_line    0x000013c7      0xaa5 ./Source/main.o
+ .debug_line    0x00001e6c      0x8c3 ./Source/stdio_user.o
+ .debug_line    0x0000272f      0x8d1 ./GeneratedSource/Thermistor.o
+ .debug_line    0x00003000      0x837 ./GeneratedSource/cycfg.o
+ .debug_line    0x00003837      0x7b3 ./GeneratedSource/cycfg_clocks.o
+ .debug_line    0x00003fea      0x7ef ./GeneratedSource/cycfg_peripherals.o
+ .debug_line    0x000047d9      0x790 ./GeneratedSource/cycfg_pins.o
+ .debug_line    0x00004f69      0x8b1 ./GeneratedSource/cycfg_platform.o
+ .debug_line    0x0000581a      0x642 ./GeneratedSource/cycfg_routing.o
+ .debug_line    0x00005e5c       0xac E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib_gcc.o)
+ .debug_line    0x00005f08      0x4f2 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
+ .debug_line    0x000063fa      0x975 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
+ .debug_line    0x00006d6f      0x9da E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
+ .debug_line    0x00007749      0x978 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
+ .debug_line    0x000080c1     0x1240 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+ .debug_line    0x00009301      0xb59 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
+ .debug_line    0x00009e5a      0x9a9 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
+ .debug_line    0x0000a803      0xf98 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
+ .debug_line    0x0000b79b      0x7ce E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
+ .debug_line    0x0000bf69      0xfb4 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+ .debug_line    0x0000cf1d      0x7cb E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
+ .debug_line    0x0000d6e8      0x942 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+ .debug_line    0x0000e02a      0xf5e E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+ .debug_line    0x0000ef88      0x7f4 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
+ .debug_line    0x0000f77c      0xfee E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
 
-.debug_str      0x00000000    0xdc896
- .debug_str     0x00000000    0xb82e6 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
-                              0xb8627 (size before relaxing)
- .debug_str     0x000b82e6       0x63 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/gcc/startup_psoc6_02_cm4.o
+.debug_str      0x00000000    0xdc9de
+ .debug_str     0x00000000    0xb83d9 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
+                              0xb871a (size before relaxing)
+ .debug_str     0x000b83d9       0x63 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/gcc/startup_psoc6_02_cm4.o
                                  0x9a (size before relaxing)
- .debug_str     0x000b8349     0x2ef3 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
+ .debug_str     0x000b843c     0x2ef3 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
                               0xa7346 (size before relaxing)
- .debug_str     0x000bb23c     0x12c9 ./Source/main.o
-                              0xb9f26 (size before relaxing)
- .debug_str     0x000bc505       0x87 ./Source/stdio_user.o
-                              0xb4a6a (size before relaxing)
- .debug_str     0x000bc58c       0x66 ./GeneratedSource/Thermistor.o
-                              0xb7d8c (size before relaxing)
- .debug_str     0x000bc5f2       0x7b ./GeneratedSource/cycfg.o
-                              0xb468f (size before relaxing)
- .debug_str     0x000bc66d      0x238 ./GeneratedSource/cycfg_clocks.o
+ .debug_str     0x000bb32f     0x1383 ./Source/main.o
+                              0xbb3a2 (size before relaxing)
+ .debug_str     0x000bc6b2       0x87 ./Source/stdio_user.o
+                              0xb4b5d (size before relaxing)
+ .debug_str     0x000bc739       0x66 ./GeneratedSource/Thermistor.o
+                              0xb7e7f (size before relaxing)
+ .debug_str     0x000bc79f       0x7b ./GeneratedSource/cycfg.o
+                              0xb4782 (size before relaxing)
+ .debug_str     0x000bc81a      0x238 ./GeneratedSource/cycfg_clocks.o
                               0xa6b64 (size before relaxing)
- .debug_str     0x000bc8a5     0x119c ./GeneratedSource/cycfg_peripherals.o
+ .debug_str     0x000bca52     0x119c ./GeneratedSource/cycfg_peripherals.o
                               0xad6a6 (size before relaxing)
- .debug_str     0x000bda41       0x31 ./GeneratedSource/cycfg_pins.o
-                              0xac632 (size before relaxing)
- .debug_str     0x000bda72      0xd9d ./GeneratedSource/cycfg_platform.o
+ .debug_str     0x000bdbee       0x31 ./GeneratedSource/cycfg_pins.o
+                              0xac725 (size before relaxing)
+ .debug_str     0x000bdc1f      0xd9d ./GeneratedSource/cycfg_platform.o
                               0xaf359 (size before relaxing)
- .debug_str     0x000be80f       0x23 ./GeneratedSource/cycfg_routing.o
+ .debug_str     0x000be9bc       0x23 ./GeneratedSource/cycfg_routing.o
                               0x74902 (size before relaxing)
- .debug_str     0x000be832       0xa2 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib_gcc.o)
+ .debug_str     0x000be9df       0xa2 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib_gcc.o)
                                  0xb1 (size before relaxing)
- .debug_str     0x000be8d4       0x77 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
+ .debug_str     0x000bea81       0x77 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
                               0x5f458 (size before relaxing)
- .debug_str     0x000be94b    0x1594f E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
+ .debug_str     0x000beaf8    0x1594f E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
                               0xa62dd (size before relaxing)
- .debug_str     0x000d429a      0x62d E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
+ .debug_str     0x000d4447      0x5c8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
                               0xa5bfc (size before relaxing)
- .debug_str     0x000d48c7      0x302 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
+ .debug_str     0x000d4a0f      0x302 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
                               0xa7bfd (size before relaxing)
- .debug_str     0x000d4bc9      0x920 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+ .debug_str     0x000d4d11      0x920 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
                               0xa82c9 (size before relaxing)
- .debug_str     0x000d54e9      0x59e E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
+ .debug_str     0x000d5631      0x59e E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
                               0xa871d (size before relaxing)
- .debug_str     0x000d5a87      0x1e4 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
+ .debug_str     0x000d5bcf      0x1e4 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
                               0xa8918 (size before relaxing)
- .debug_str     0x000d5c6b      0x51b E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
+ .debug_str     0x000d5db3      0x51b E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
                               0xaa5ad (size before relaxing)
- .debug_str     0x000d6186       0x67 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
+ .debug_str     0x000d62ce       0x67 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
                               0xa70f6 (size before relaxing)
- .debug_str     0x000d61ed     0x160f E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+ .debug_str     0x000d6335     0x160f E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
                               0xabc3f (size before relaxing)
- .debug_str     0x000d77fc       0xe9 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
+ .debug_str     0x000d7944       0xe9 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
                               0xa4f9c (size before relaxing)
- .debug_str     0x000d78e5      0xbb5 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+ .debug_str     0x000d7a2d      0xbb5 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
                               0xa8a22 (size before relaxing)
- .debug_str     0x000d849a     0x3353 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+ .debug_str     0x000d85e2     0x3353 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
                               0xac052 (size before relaxing)
- .debug_str     0x000db7ed       0x97 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
+ .debug_str     0x000db935       0x97 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
                               0xa4bd5 (size before relaxing)
- .debug_str     0x000db884     0x1012 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
+ .debug_str     0x000db9cc     0x1012 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
                               0xa7577 (size before relaxing)
 
-.debug_frame    0x00000000     0x2d80
+.debug_frame    0x00000000     0x2d94
  .debug_frame   0x00000000       0x48 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
  .debug_frame   0x00000048       0x88 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_frame   0x000000d0       0x6c ./Source/main.o
- .debug_frame   0x0000013c       0x38 ./Source/stdio_user.o
- .debug_frame   0x00000174       0x40 ./GeneratedSource/Thermistor.o
- .debug_frame   0x000001b4       0x28 ./GeneratedSource/cycfg.o
- .debug_frame   0x000001dc       0x30 ./GeneratedSource/cycfg_clocks.o
- .debug_frame   0x0000020c       0x20 ./GeneratedSource/cycfg_peripherals.o
- .debug_frame   0x0000022c       0x28 ./GeneratedSource/cycfg_pins.o
- .debug_frame   0x00000254       0x44 ./GeneratedSource/cycfg_platform.o
- .debug_frame   0x00000298       0x20 ./GeneratedSource/cycfg_routing.o
- .debug_frame   0x000002b8       0x20 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
- .debug_frame   0x000002d8       0xfc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
- .debug_frame   0x000003d4      0x130 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
- .debug_frame   0x00000504       0xb8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
- .debug_frame   0x000005bc      0x32c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
- .debug_frame   0x000008e8      0x2bc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
- .debug_frame   0x00000ba4      0x10c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
- .debug_frame   0x00000cb0      0x230 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
- .debug_frame   0x00000ee0       0x28 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
- .debug_frame   0x00000f08      0x2ac E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
- .debug_frame   0x000011b4       0x60 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
- .debug_frame   0x00001214      0x114 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
- .debug_frame   0x00001328      0x35c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
- .debug_frame   0x00001684       0x64 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
- .debug_frame   0x000016e8      0x4f8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
- .debug_frame   0x00001be0       0xac c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_addsubdf3.o)
- .debug_frame   0x00001c8c       0x50 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_muldivdf3.o)
- .debug_frame   0x00001cdc       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_truncdfsf2.o)
- .debug_frame   0x00001d00       0x28 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x00001d28       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-memset.o)
- .debug_frame   0x00001d48       0x90 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_float.o)
- .debug_frame   0x00001dd8       0x60 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_i.o)
- .debug_frame   0x00001e38       0x74 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-printf.o)
- .debug_frame   0x00001eac       0x3c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-puts.o)
- .debug_frame   0x00001ee8       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-strncpy.o)
- .debug_frame   0x00001f14       0x40 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-wbuf.o)
- .debug_frame   0x00001f54       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-wsetup.o)
- .debug_frame   0x00001f80       0x6c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-dtoa.o)
- .debug_frame   0x00001fec       0x68 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-fflush.o)
- .debug_frame   0x00002054      0x11c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
- .debug_frame   0x00002170       0x54 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-fwalk.o)
- .debug_frame   0x000021c4       0x68 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-locale.o)
- .debug_frame   0x0000222c       0x40 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-localeconv.o)
- .debug_frame   0x0000226c       0x58 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-makebuf.o)
- .debug_frame   0x000022c4       0x30 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-malloc.o)
- .debug_frame   0x000022f4       0x48 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mbtowc_r.o)
- .debug_frame   0x0000233c      0x248 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
- .debug_frame   0x00002584       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-callocr.o)
- .debug_frame   0x000025b0       0x38 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-freer.o)
- .debug_frame   0x000025e8       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-mallocr.o)
- .debug_frame   0x00002614       0xac c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf.o)
- .debug_frame   0x000026c0       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-sbrkr.o)
- .debug_frame   0x000026ec       0x88 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-stdio.o)
- .debug_frame   0x00002774       0x3c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-wctomb_r.o)
- .debug_frame   0x000027b0       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-writer.o)
- .debug_frame   0x000027dc       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-closer.o)
- .debug_frame   0x00002808       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-fstatr.o)
- .debug_frame   0x00002834       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-isattyr.o)
- .debug_frame   0x00002860       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-lseekr.o)
- .debug_frame   0x0000288c       0x30 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mlock.o)
- .debug_frame   0x000028bc       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-readr.o)
- .debug_frame   0x000028e8       0x5c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-reent.o)
- .debug_frame   0x00002944       0xc4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_cmpdf2.o)
- .debug_frame   0x00002a08       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_unorddf2.o)
- .debug_frame   0x00002a28       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_fixdfsi.o)
- .debug_frame   0x00002a4c       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(close.o)
- .debug_frame   0x00002a6c       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(fstat.o)
- .debug_frame   0x00002a8c       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(isatty.o)
- .debug_frame   0x00002aac       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(lseek.o)
- .debug_frame   0x00002acc       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(sbrk.o)
- .debug_frame   0x00002aec       0x40 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-w_log.o)
- .debug_frame   0x00002b2c       0x48 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-w_pow.o)
- .debug_frame   0x00002b74       0x4c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-e_log.o)
- .debug_frame   0x00002bc0       0x68 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-e_pow.o)
- .debug_frame   0x00002c28       0x30 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-e_sqrt.o)
- .debug_frame   0x00002c58       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_fabs.o)
- .debug_frame   0x00002c78       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_finite.o)
- .debug_frame   0x00002c98       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_matherr.o)
- .debug_frame   0x00002cb8       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_nan.o)
- .debug_frame   0x00002cd8       0x38 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_rint.o)
- .debug_frame   0x00002d10       0x30 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_scalbn.o)
- .debug_frame   0x00002d40       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_copysign.o)
- .debug_frame   0x00002d60       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc.a(lib_a-errno.o)
+ .debug_frame   0x000000d0       0x80 ./Source/main.o
+ .debug_frame   0x00000150       0x38 ./Source/stdio_user.o
+ .debug_frame   0x00000188       0x40 ./GeneratedSource/Thermistor.o
+ .debug_frame   0x000001c8       0x28 ./GeneratedSource/cycfg.o
+ .debug_frame   0x000001f0       0x30 ./GeneratedSource/cycfg_clocks.o
+ .debug_frame   0x00000220       0x20 ./GeneratedSource/cycfg_peripherals.o
+ .debug_frame   0x00000240       0x28 ./GeneratedSource/cycfg_pins.o
+ .debug_frame   0x00000268       0x44 ./GeneratedSource/cycfg_platform.o
+ .debug_frame   0x000002ac       0x20 ./GeneratedSource/cycfg_routing.o
+ .debug_frame   0x000002cc       0x20 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
+ .debug_frame   0x000002ec       0xfc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
+ .debug_frame   0x000003e8      0x130 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
+ .debug_frame   0x00000518       0xb8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
+ .debug_frame   0x000005d0      0x32c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+ .debug_frame   0x000008fc      0x2bc E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
+ .debug_frame   0x00000bb8      0x10c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
+ .debug_frame   0x00000cc4      0x230 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
+ .debug_frame   0x00000ef4       0x28 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
+ .debug_frame   0x00000f1c      0x2ac E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+ .debug_frame   0x000011c8       0x60 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
+ .debug_frame   0x00001228      0x114 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+ .debug_frame   0x0000133c      0x35c E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+ .debug_frame   0x00001698       0x64 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
+ .debug_frame   0x000016fc      0x4f8 E:/Programming/Cypress/PSoC6/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
+ .debug_frame   0x00001bf4       0xac c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x00001ca0       0x50 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_muldivdf3.o)
+ .debug_frame   0x00001cf0       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_truncdfsf2.o)
+ .debug_frame   0x00001d14       0x28 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00001d3c       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x00001d5c       0x90 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_float.o)
+ .debug_frame   0x00001dec       0x60 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .debug_frame   0x00001e4c       0x74 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-printf.o)
+ .debug_frame   0x00001ec0       0x3c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-puts.o)
+ .debug_frame   0x00001efc       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-strncpy.o)
+ .debug_frame   0x00001f28       0x40 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-wbuf.o)
+ .debug_frame   0x00001f68       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-wsetup.o)
+ .debug_frame   0x00001f94       0x6c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-dtoa.o)
+ .debug_frame   0x00002000       0x68 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-fflush.o)
+ .debug_frame   0x00002068      0x11c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-findfp.o)
+ .debug_frame   0x00002184       0x54 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-fwalk.o)
+ .debug_frame   0x000021d8       0x68 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-locale.o)
+ .debug_frame   0x00002240       0x40 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-localeconv.o)
+ .debug_frame   0x00002280       0x58 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-makebuf.o)
+ .debug_frame   0x000022d8       0x30 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-malloc.o)
+ .debug_frame   0x00002308       0x48 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mbtowc_r.o)
+ .debug_frame   0x00002350      0x248 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mprec.o)
+ .debug_frame   0x00002598       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-callocr.o)
+ .debug_frame   0x000025c4       0x38 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-freer.o)
+ .debug_frame   0x000025fc       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x00002628       0xac c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-nano-vfprintf.o)
+ .debug_frame   0x000026d4       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-sbrkr.o)
+ .debug_frame   0x00002700       0x88 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-stdio.o)
+ .debug_frame   0x00002788       0x3c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-wctomb_r.o)
+ .debug_frame   0x000027c4       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-writer.o)
+ .debug_frame   0x000027f0       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-closer.o)
+ .debug_frame   0x0000281c       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-fstatr.o)
+ .debug_frame   0x00002848       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-isattyr.o)
+ .debug_frame   0x00002874       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-lseekr.o)
+ .debug_frame   0x000028a0       0x30 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-mlock.o)
+ .debug_frame   0x000028d0       0x2c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-readr.o)
+ .debug_frame   0x000028fc       0x5c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libg_nano.a(lib_a-reent.o)
+ .debug_frame   0x00002958       0xc4 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_cmpdf2.o)
+ .debug_frame   0x00002a1c       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_unorddf2.o)
+ .debug_frame   0x00002a3c       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_arm_fixdfsi.o)
+ .debug_frame   0x00002a60       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(close.o)
+ .debug_frame   0x00002a80       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(fstat.o)
+ .debug_frame   0x00002aa0       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(isatty.o)
+ .debug_frame   0x00002ac0       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(lseek.o)
+ .debug_frame   0x00002ae0       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(sbrk.o)
+ .debug_frame   0x00002b00       0x40 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-w_log.o)
+ .debug_frame   0x00002b40       0x48 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-w_pow.o)
+ .debug_frame   0x00002b88       0x4c c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-e_log.o)
+ .debug_frame   0x00002bd4       0x68 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-e_pow.o)
+ .debug_frame   0x00002c3c       0x30 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-e_sqrt.o)
+ .debug_frame   0x00002c6c       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_fabs.o)
+ .debug_frame   0x00002c8c       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_finite.o)
+ .debug_frame   0x00002cac       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_matherr.o)
+ .debug_frame   0x00002ccc       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_nan.o)
+ .debug_frame   0x00002cec       0x38 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_rint.o)
+ .debug_frame   0x00002d24       0x30 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_scalbn.o)
+ .debug_frame   0x00002d54       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libm.a(lib_a-s_copysign.o)
+ .debug_frame   0x00002d74       0x20 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc.a(lib_a-errno.o)
 
 .stab           0x00000000       0x6c
  .stab          0x00000000       0x24 c:/users/oleh/modustoolbox_1.1/tools/gcc-7.2.1-1.0/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libnosys.a(close.o)

@@ -36,6 +36,31 @@
 cy_stc_scb_uart_context_t uart_context;
 cy_stc_rtc_config_t dateTime;
 
+//value for change temperature_sw
+bool temperature_sw = true;
+
+#define SWITCH_INTR_PRIORITY	(3u)
+
+/* Switch interrupt configuration structure */
+const cy_stc_sysint_t switch_intr_config = {
+	.intrSrc = ioss_interrupts_gpio_0_IRQn,		/* Source of interrupt signal */
+	.intrPriority = SWITCH_INTR_PRIORITY		/* Interrupt priority */
+};
+
+void Isr_switch(void)
+{
+	if(temperature_sw == true){
+		temperature_sw = false;
+	}
+	else {
+		temperature_sw = true;
+	}
+
+	/* Clears the triggered pin interrupt */
+	Cy_GPIO_ClearInterrupt(PIN_SW_PORT, PIN_SW_NUM);
+	NVIC_ClearPendingIRQ(switch_intr_config.intrSrc);
+}
+
 void PrintDateAndTime();
 
 void ThermistorInfo();
@@ -47,18 +72,27 @@ int main(void)
 
     __enable_irq();
 
+    //Set UART
     Cy_SCB_UART_Init(Bridge_UART_HW, &Bridge_UART_config, &uart_context);
 	Cy_SCB_UART_Enable(Bridge_UART_HW);
 
+	//Set RTC
 	Cy_RTC_Init(&RTC_config);
 
+	//Set System Analog Reference Block
 	cy_en_sysanalog_status_t status_aref;
 	status_aref = Cy_SysAnalog_Init(&Cy_SysAnalog_Fast_Local);
 	Cy_SysAnalog_Enable();
 
+	//Set SAR ADC
 	Cy_SAR_Init(SAR_HW, &SAR_config);
 	Cy_SAR_Enable(SAR_HW);
 	Cy_SAR_StartConvert(SAR_HW, CY_SAR_START_CONVERT_CONTINUOUS);
+
+	//Set button interrupt
+	Cy_SysInt_Init(&switch_intr_config, Isr_switch);
+	NVIC_ClearPendingIRQ(switch_intr_config.intrSrc);
+	NVIC_EnableIRQ(switch_intr_config.intrSrc);
 
     /* \x1b[2J\x1b[;H - ANSI ESC sequence for clear screen */
 	printf("\x1b[2J\x1b[;H");
@@ -109,5 +143,6 @@ void ThermistorInfo(){
 	uint32 resT = Thermistor_GetResistance(countReference, countThermistor);
 	float temperature = (float)Thermistor_GetTemperature(resT) / 100.0;
 
-	printf("<T = %.3fC T = %.3fF>\r\n", temperature, 9.0/5.0 * temperature + 32.0);
+	printf("<T = %.3f%c>\r\n", temperature_sw == true ? (temperature) : (9.0/5.0 * temperature + 32.0),
+			temperature_sw == true ? 'C' : 'F');
 }

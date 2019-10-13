@@ -51,6 +51,16 @@ extern "C" {
 	#define ioss_0_port_0_pin_1_HSIOM HSIOM_SEL_GPIO
 #endif
 #define ioss_0_port_0_pin_1_IRQ ioss_interrupts_gpio_0_IRQn
+#define PIN_SW_PORT GPIO_PRT0
+#define PIN_SW_PIN 4U
+#define PIN_SW_NUM 4U
+#define PIN_SW_DRIVEMODE CY_GPIO_DM_PULLUP
+#define PIN_SW_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_0_pin_4_HSIOM
+	#define ioss_0_port_0_pin_4_HSIOM HSIOM_SEL_GPIO
+#endif
+#define PIN_SW_HSIOM ioss_0_port_0_pin_4_HSIOM
+#define PIN_SW_IRQ ioss_interrupts_gpio_0_IRQn
 #define ioss_0_port_10_pin_0_PORT GPIO_PRT10
 #define ioss_0_port_10_pin_0_PIN 0U
 #define ioss_0_port_10_pin_0_NUM 0U
@@ -130,6 +140,7 @@ extern "C" {
 
 extern const cy_stc_gpio_pin_config_t ioss_0_port_0_pin_0_config;
 extern const cy_stc_gpio_pin_config_t ioss_0_port_0_pin_1_config;
+extern const cy_stc_gpio_pin_config_t PIN_SW_config;
 extern const cy_stc_gpio_pin_config_t ioss_0_port_10_pin_0_config;
 extern const cy_stc_gpio_pin_config_t ioss_0_port_10_pin_1_config;
 extern const cy_stc_gpio_pin_config_t Pin_Led_config;
