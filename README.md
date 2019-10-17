@@ -7,7 +7,7 @@ Requirements
 Tool: ModusToolbox IDE
 Programming Language: C
 
-Supported Kits
+Supported Kit
 --------------------
 PSoC 6 CY8CPROTO-062-4343W
 
