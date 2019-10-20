@@ -83,6 +83,7 @@ Source/stdio_user.o: ../Source/stdio_user.c ../Source/stdio_user.h \
  C:/Users/Oleh/ModusToolbox_1.1/libraries/psoc6sw-1.1/components/psoc6pdl/drivers/include/cy_sar.h \
  C:/Users/Oleh/ModusToolbox_1.1/libraries/psoc6sw-1.1/components/psoc6pdl/drivers/include/cy_scb_uart.h \
  C:/Users/Oleh/ModusToolbox_1.1/libraries/psoc6sw-1.1/components/psoc6pdl/drivers/include/cy_scb_common.h \
+ C:/Users/Oleh/ModusToolbox_1.1/libraries/psoc6sw-1.1/components/psoc6pdl/drivers/include/cy_sd_host.h \
  C:/Users/Oleh/ModusToolbox_1.1/libraries/psoc6sw-1.1/components/psoc6pdl/drivers/include/cy_rtc.h \
  E:\Programming\Cypress\PSoC6\CypressTest_mainapp/GeneratedSource/cycfg_pins.h \
  C:/Users/Oleh/ModusToolbox_1.1/libraries/psoc6sw-1.1/components/psoc6pdl/drivers/include/cy_gpio.h \
@@ -259,6 +260,8 @@ C:/Users/Oleh/ModusToolbox_1.1/libraries/psoc6sw-1.1/components/psoc6pdl/drivers
 C:/Users/Oleh/ModusToolbox_1.1/libraries/psoc6sw-1.1/components/psoc6pdl/drivers/include/cy_scb_uart.h:
 
 C:/Users/Oleh/ModusToolbox_1.1/libraries/psoc6sw-1.1/components/psoc6pdl/drivers/include/cy_scb_common.h:
+
+C:/Users/Oleh/ModusToolbox_1.1/libraries/psoc6sw-1.1/components/psoc6pdl/drivers/include/cy_sd_host.h:
 
 C:/Users/Oleh/ModusToolbox_1.1/libraries/psoc6sw-1.1/components/psoc6pdl/drivers/include/cy_rtc.h:
 

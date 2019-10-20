@@ -29,7 +29,6 @@
 #include "cy_device_headers.h"
 #include "cycfg.h"
 #include "cy_sysint.h"
-#include "stdio_user.h"
 #include <stdio.h>
 #include "Thermistor.h"
 
@@ -94,6 +93,13 @@ int main(void)
 	NVIC_ClearPendingIRQ(switch_intr_config.intrSrc);
 	NVIC_EnableIRQ(switch_intr_config.intrSrc);
 
+
+	/* Apply the CLK_HF2 divider to have CLK_HF2 = 100 MHz. */
+	Cy_SysClk_ClkHfSetSource(2u, CY_SYSCLK_CLKHF_IN_CLKPATH0);
+	Cy_SysClk_ClkHfSetDivider(2u, CY_SYSCLK_CLKHF_NO_DIVIDE);
+	Cy_SysClk_ClkHfEnable(2u);
+
+
     /* \x1b[2J\x1b[;H - ANSI ESC sequence for clear screen */
 	printf("\x1b[2J\x1b[;H");
 
@@ -123,14 +129,12 @@ void PrintDateAndTime(){
 		/*Print Thermistor info.*/
 		ThermistorInfo();
 
-		if(secPrev == 0 || secPrev == 30)
-			access = true;
-	}
-	if(access){
-		Cy_GPIO_Write(Pin_Led_PORT,Pin_Led_NUM,0);
-		printf("Here will be SD writing. Soon:D\r\n");
-		access = false;
-		CyDelay(500);
+		if(secPrev == 0 || secPrev == 30){
+			Cy_GPIO_Write(Pin_Led_PORT,Pin_Led_NUM,0);
+			printf("Here will be SD writing. Soon:D\r\n");
+			access = false;
+			CyDelay(500);
+		}
 	}
 }
 
@@ -146,3 +150,11 @@ void ThermistorInfo(){
 	printf("<T = %.3f%c>\r\n", temperature_sw == true ? (temperature) : (9.0/5.0 * temperature + 32.0),
 			temperature_sw == true ? 'C' : 'F');
 }
+
+/*
+ * **********************************************************************************************
+ * **********************************************************************************************
+ * **********************************************************************************************
+ * **********************************************************************************************
+ */
+

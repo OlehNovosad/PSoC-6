@@ -30,6 +30,7 @@
 #include "cy_sar.h"
 #include "cy_sysclk.h"
 #include "cy_scb_uart.h"
+#include "cy_sd_host.h"
 #include "cy_rtc.h"
 
 #if defined(__cplusplus)
@@ -39,7 +40,7 @@ extern "C" {
 #define SAR_HW SAR
 #define SAR_IRQ pass_interrupt_sar_IRQn
 #define SAR_CTRL (CY_SAR_VREF_PWR_100 | CY_SAR_VREF_SEL_VDDA | CY_SAR_BYPASS_CAP_ENABLE | CY_SAR_NEG_SEL_VREF | CY_SAR_CTRL_NEGVREF_HW | CY_SAR_CTRL_COMP_DLY_12 | CY_SAR_COMP_PWR_100 | CY_SAR_DEEPSLEEP_SARMUX_OFF | CY_SAR_SARSEQ_SWITCH_ENABLE)
-#define SAR_SAMPLE (SAR_SAMPLE_CTRL_EOS_DSI_OUT_EN_Msk | CY_SAR_RIGHT_ALIGN | CY_SAR_DIFFERENTIAL_SIGNED | CY_SAR_SINGLE_ENDED_UNSIGNED | CY_SAR_AVG_CNT_256 | CY_SAR_AVG_MODE_SEQUENTIAL_FIXED | CY_SAR_TRIGGER_MODE_FW_ONLY)
+#define SAR_SAMPLE (SAR_SAMPLE_CTRL_EOS_DSI_OUT_EN_Msk | CY_SAR_RIGHT_ALIGN | CY_SAR_DIFFERENTIAL_SIGNED | CY_SAR_SINGLE_ENDED_SIGNED | CY_SAR_AVG_CNT_256 | CY_SAR_AVG_MODE_SEQUENTIAL_FIXED | CY_SAR_TRIGGER_MODE_FW_ONLY)
 #define SAR_CH0_CONFIG (CY_SAR_POS_PORT_ADDR_SARMUX | CY_SAR_CHAN_POS_PIN_ADDR_0 | CY_SAR_CHAN_SINGLE_ENDED | CY_SAR_CHAN_AVG_ENABLE | CY_SAR_CHAN_SAMPLE_TIME_0)
 #define SAR_CH1_CONFIG (CY_SAR_POS_PORT_ADDR_SARMUX | CY_SAR_CHAN_POS_PIN_ADDR_1 | CY_SAR_CHAN_SINGLE_ENDED | CY_SAR_CHAN_AVG_ENABLE | CY_SAR_CHAN_SAMPLE_TIME_1)
 #define SAR_MUX_SWITCH (0u | CY_SAR_MUX_FW_P0_VPLUS | CY_SAR_MUX_FW_P1_VPLUS)
@@ -47,6 +48,8 @@ extern "C" {
 #define SAR_VREF_MV 3300UL
 #define Bridge_UART_HW SCB5
 #define Bridge_UART_IRQ scb_5_interrupt_IRQn
+#define SDHC_HW SDHC1
+#define SDHC_IRQ sdhc_1_interrupt_general_IRQn
 #define RTC_10_MONTH_OFFSET (28U)
 #define RTC_MONTH_OFFSET (24U)
 #define RTC_10_DAY_OFFSET (20U)
@@ -59,6 +62,11 @@ extern "C" {
 extern const cy_stc_sysanalog_config_t pass_0_aref_0_config;
 extern const cy_stc_sar_config_t SAR_config;
 extern const cy_stc_scb_uart_config_t Bridge_UART_config;
+extern cy_en_sd_host_card_capacity_t SDHC_cardCapacity;
+extern cy_en_sd_host_card_type_t SDHC_cardType;
+extern uint32_t SDHC_rca;
+extern const cy_stc_sd_host_init_config_t SDHC_config;
+extern cy_stc_sd_host_sd_card_config_t SDHC_card_cfg;
 extern const cy_stc_rtc_config_t RTC_config;
 
 void init_cycfg_peripherals(void);

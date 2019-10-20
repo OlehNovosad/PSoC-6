@@ -35,9 +35,9 @@ const cy_stc_sar_config_t SAR_config =
 {
 	.ctrl = (uint32_t) SAR_CTRL,
 	.sampleCtrl = (uint32_t) SAR_SAMPLE,
-	.sampleTime01 = (4UL << CY_SAR_SAMPLE_TIME0_SHIFT) | (4UL << CY_SAR_SAMPLE_TIME1_SHIFT),
+	.sampleTime01 = (2UL << CY_SAR_SAMPLE_TIME0_SHIFT) | (2UL << CY_SAR_SAMPLE_TIME1_SHIFT),
 	.sampleTime23 = (2UL << CY_SAR_SAMPLE_TIME2_SHIFT) | (2UL << CY_SAR_SAMPLE_TIME3_SHIFT),
-	.rangeThres = (0UL << CY_SAR_RANGE_HIGH_SHIFT) | (200UL << CY_SAR_RANGE_LOW_SHIFT),
+	.rangeThres = (0UL << CY_SAR_RANGE_HIGH_SHIFT) | (0UL << CY_SAR_RANGE_LOW_SHIFT),
 	.rangeCond = CY_SAR_RANGE_COND_BELOW,
 	.chanEn = 3UL,
 	.chanConfig = {(uint32_t) SAR_CH0_CONFIG, (uint32_t) SAR_CH1_CONFIG, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL},
@@ -76,6 +76,23 @@ const cy_stc_scb_uart_config_t Bridge_UART_config =
 	.rxFifoIntEnableMask = 0UL,
 	.txFifoTriggerLevel = 63UL,
 	.txFifoIntEnableMask = 0UL,
+};
+cy_en_sd_host_card_capacity_t SDHC_cardCapacity = CY_SD_HOST_SDSC;
+cy_en_sd_host_card_type_t SDHC_cardType = CY_SD_HOST_NOT_EMMC;
+uint32_t SDHC_rca = 0u;
+const cy_stc_sd_host_init_config_t SDHC_config = 
+{
+	.emmc = false,
+	.dmaType = CY_SD_HOST_DMA_SDMA,
+	.enableLedControl = false,
+};
+cy_stc_sd_host_sd_card_config_t SDHC_card_cfg = 
+{
+	.lowVoltageSignaling = false,
+	.busWidth = CY_SD_HOST_BUS_WIDTH_4_BIT,
+	.cardType = &SDHC_cardType,
+	.rca = &SDHC_rca,
+	.cardCapacity = &SDHC_cardCapacity,
 };
 const cy_stc_rtc_config_t RTC_config = 
 {
