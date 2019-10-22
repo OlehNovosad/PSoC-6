@@ -31,11 +31,12 @@
 #define CY_CFG_SYSCLK_WCO_ERROR 5
 #define CY_CFG_SYSCLK_PLL1_AVAILABLE 1
 #define CY_CFG_SYSCLK_CLKFAST_ENABLED 1
+#define CY_CFG_SYSCLK_FLL_ENABLED 1
 #define CY_CFG_SYSCLK_CLKHF0_ENABLED 1
 #define CY_CFG_SYSCLK_CLKHF0_FREQ_MHZ 144UL
 #define CY_CFG_SYSCLK_CLKHF0_CLKPATH CY_SYSCLK_CLKHF_IN_CLKPATH1
 #define CY_CFG_SYSCLK_CLKHF2_ENABLED 1
-#define CY_CFG_SYSCLK_CLKHF2_FREQ_MHZ 8UL
+#define CY_CFG_SYSCLK_CLKHF2_FREQ_MHZ 100UL
 #define CY_CFG_SYSCLK_CLKHF2_CLKPATH CY_SYSCLK_CLKHF_IN_CLKPATH0
 #define CY_CFG_SYSCLK_ILO_ENABLED 1
 #define CY_CFG_SYSCLK_IMO_ENABLED 1
@@ -61,6 +62,19 @@
 #define CY_CFG_PWR_LDO_VOLTAGE CY_SYSPM_LDO_VOLTAGE_1_1V
 #define CY_CFG_PWR_USING_ULP 0
 
+static const cy_stc_fll_manual_config_t srss_0_clock_0_fll_0_fllConfig = 
+{
+	.fllMult = 500U,
+	.refDiv = 20U,
+	.ccoRange = CY_SYSCLK_FLL_CCO_RANGE4,
+	.enableOutputDiv = true,
+	.lockTolerance = 10U,
+	.igain = 9U,
+	.pgain = 5U,
+	.settlingCount = 8U,
+	.outputMode = CY_SYSCLK_FLLPLL_OUTPUT_OUTPUT,
+	.cco_Freq = 355U,
+};
 static const cy_stc_pll_manual_config_t srss_0_clock_0_pll_0_pllConfig = 
 {
 	.feedbackDiv = 36,
@@ -78,6 +92,17 @@ __WEAK void cycfg_ClockStartupError(uint32_t error)
 __STATIC_INLINE void Cy_SysClk_ClkFastInit()
 {
     Cy_SysClk_ClkFastSetDivider(0U);
+}
+__STATIC_INLINE void Cy_SysClk_FllInit()
+{
+    if (CY_SYSCLK_SUCCESS != Cy_SysClk_FllManualConfigure(&srss_0_clock_0_fll_0_fllConfig))
+    {
+        cycfg_ClockStartupError(CY_CFG_SYSCLK_FLL_ERROR);
+    }
+    if (CY_SYSCLK_SUCCESS != Cy_SysClk_FllEnable(200000UL))
+    {
+        cycfg_ClockStartupError(CY_CFG_SYSCLK_FLL_ERROR);
+    }
 }
 __STATIC_INLINE void Cy_SysClk_ClkHf0Init()
 {

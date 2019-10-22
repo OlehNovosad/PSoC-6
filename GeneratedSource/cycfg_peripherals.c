@@ -35,9 +35,9 @@ const cy_stc_sar_config_t SAR_config =
 {
 	.ctrl = (uint32_t) SAR_CTRL,
 	.sampleCtrl = (uint32_t) SAR_SAMPLE,
-	.sampleTime01 = (2UL << CY_SAR_SAMPLE_TIME0_SHIFT) | (2UL << CY_SAR_SAMPLE_TIME1_SHIFT),
+	.sampleTime01 = (4UL << CY_SAR_SAMPLE_TIME0_SHIFT) | (4UL << CY_SAR_SAMPLE_TIME1_SHIFT),
 	.sampleTime23 = (2UL << CY_SAR_SAMPLE_TIME2_SHIFT) | (2UL << CY_SAR_SAMPLE_TIME3_SHIFT),
-	.rangeThres = (0UL << CY_SAR_RANGE_HIGH_SHIFT) | (0UL << CY_SAR_RANGE_LOW_SHIFT),
+	.rangeThres = (0UL << CY_SAR_RANGE_HIGH_SHIFT) | (200UL << CY_SAR_RANGE_LOW_SHIFT),
 	.rangeCond = CY_SAR_RANGE_COND_BELOW,
 	.chanEn = 3UL,
 	.chanConfig = {(uint32_t) SAR_CH0_CONFIG, (uint32_t) SAR_CH1_CONFIG, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL},
