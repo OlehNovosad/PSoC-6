@@ -28,7 +28,7 @@
                 <Param id="inFlash" value="true"/>
             </Block>
             <Block location="pass[0].sar[0]" alias="SAR" template="mxs40sar" version="1.0">
-                <Param id="vref_select" value="CY_SAR_VREF_SEL_VDDA"/>
+                <Param id="vref_select" value="CY_SAR_VREF_SEL_BGR"/>
                 <Param id="vref_voltage" value="1.2"/>
                 <Param id="num_channels" value="2"/>
                 <Param id="vref_byp_cap" value="true"/>
