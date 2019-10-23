@@ -15,6 +15,7 @@
 #include "Thermistor.h"
 
 #define FAHRENHEIT(temperature)	(9.0/5.0 * temperature + 32.0)
+
 #define SWITCH_INTR_PRIORITY	(3u)
 #define SD_Host_INTR_NUM        sdhc_1_interrupt_general_IRQn
 #define SD_Host_INTR_PRIORITY   (3UL)
@@ -162,8 +163,8 @@ int main(void)
 
 void PrintDateAndTime(){
 	Cy_GPIO_Write(Pin_Led_PORT,Pin_Led_NUM,1);
-	char dateandtime[50];
-	char terminfo[20];
+	char dateandtime[CY_SD_HOST_BLOCK_SIZE];
+	char terminfo[CY_SD_HOST_BLOCK_SIZE];
 
 	/* Variable used to store previous second value */
 	static uint32_t secPrev = CY_RTC_MAX_SEC_OR_MIN + 1;
@@ -216,6 +217,7 @@ char * ThermistorInfo(char * terminfo){
 bool SDHCRW(char * dateandtime){
 	Cy_SysInt_Init(&sdHostIntrConfig, &SD_Host_User_Isr);
 	NVIC_EnableIRQ(SD_Host_INTR_NUM);
+
 	Cy_SD_Host_Enable(SDHC_HW);
 	ret = Cy_SD_Host_Init(SDHC_HW, &sdHostConfig, &sdHostContext);
 
@@ -231,7 +233,7 @@ bool SDHCRW(char * dateandtime){
 	data.enReliableWrite = false; /* For EMMC cards enable reliable write. */
 	data.enableDma = true;  /* Enable DMA mode. */
 
-	data.data = (char_t*)dateandtime;  /* The pointer to data to write. */
+	data.data = (uint32_t*)dateandtime;  /* The pointer to data to write. */
 	ret = Cy_SD_Host_Write(SDHC1, &data, &sdHostContext);  /* Write data to the card. */
 
 	if (CY_SD_HOST_SUCCESS == ret)
@@ -245,7 +247,7 @@ bool SDHCRW(char * dateandtime){
 		return false;
 	}
 
-	data.data = (char_t*)rxBuff;  /* The pointer to data to read. */
+	data.data = (uint32_t*)rxBuff;  /* The pointer to data to read. */
 	ret = Cy_SD_Host_Read(SDHC1, &data, &sdHostContext);   /* Read data from the card. */
 
 	if (CY_SD_HOST_SUCCESS == ret)
@@ -254,7 +256,6 @@ bool SDHCRW(char * dateandtime){
 		{
 			/* Wait for the data-transaction complete event. */
 		}
-
 		/* Clear the data-transaction complete event. */
 		Cy_SD_Host_ClearNormalInterruptStatus(SDHC1, CY_SD_HOST_XFER_COMPLETE);
 	} else {

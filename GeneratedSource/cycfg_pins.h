@@ -79,6 +79,24 @@ extern "C" {
 	#define ioss_0_port_10_pin_1_HSIOM HSIOM_SEL_GPIO
 #endif
 #define ioss_0_port_10_pin_1_IRQ ioss_interrupts_gpio_10_IRQn
+#define ioss_0_port_10_pin_2_PORT GPIO_PRT10
+#define ioss_0_port_10_pin_2_PIN 2U
+#define ioss_0_port_10_pin_2_NUM 2U
+#define ioss_0_port_10_pin_2_DRIVEMODE CY_GPIO_DM_ANALOG
+#define ioss_0_port_10_pin_2_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_10_pin_2_HSIOM
+	#define ioss_0_port_10_pin_2_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ioss_0_port_10_pin_2_IRQ ioss_interrupts_gpio_10_IRQn
+#define ioss_0_port_10_pin_3_PORT GPIO_PRT10
+#define ioss_0_port_10_pin_3_PIN 3U
+#define ioss_0_port_10_pin_3_NUM 3U
+#define ioss_0_port_10_pin_3_DRIVEMODE CY_GPIO_DM_ANALOG
+#define ioss_0_port_10_pin_3_INIT_DRIVESTATE 1
+#ifndef ioss_0_port_10_pin_3_HSIOM
+	#define ioss_0_port_10_pin_3_HSIOM HSIOM_SEL_GPIO
+#endif
+#define ioss_0_port_10_pin_3_IRQ ioss_interrupts_gpio_10_IRQn
 #define ioss_0_port_12_pin_1_PORT GPIO_PRT12
 #define ioss_0_port_12_pin_1_PIN 1U
 #define ioss_0_port_12_pin_1_NUM 1U
@@ -173,7 +191,7 @@ extern "C" {
 #define Pin_Led_PIN 7U
 #define Pin_Led_NUM 7U
 #define Pin_Led_DRIVEMODE CY_GPIO_DM_STRONG
-#define Pin_Led_INIT_DRIVESTATE 0
+#define Pin_Led_INIT_DRIVESTATE 1
 #ifndef ioss_0_port_13_pin_7_HSIOM
 	#define ioss_0_port_13_pin_7_HSIOM HSIOM_SEL_GPIO
 #endif
@@ -233,6 +251,8 @@ extern const cy_stc_gpio_pin_config_t ioss_0_port_0_pin_1_config;
 extern const cy_stc_gpio_pin_config_t PIN_SW_config;
 extern const cy_stc_gpio_pin_config_t ioss_0_port_10_pin_0_config;
 extern const cy_stc_gpio_pin_config_t ioss_0_port_10_pin_1_config;
+extern const cy_stc_gpio_pin_config_t ioss_0_port_10_pin_2_config;
+extern const cy_stc_gpio_pin_config_t ioss_0_port_10_pin_3_config;
 extern const cy_stc_gpio_pin_config_t ioss_0_port_12_pin_1_config;
 extern const cy_stc_gpio_pin_config_t ioss_0_port_12_pin_2_config;
 extern const cy_stc_gpio_pin_config_t ioss_0_port_12_pin_4_config;

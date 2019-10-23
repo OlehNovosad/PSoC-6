@@ -33,7 +33,7 @@
 #define CY_CFG_SYSCLK_CLKFAST_ENABLED 1
 #define CY_CFG_SYSCLK_FLL_ENABLED 1
 #define CY_CFG_SYSCLK_CLKHF0_ENABLED 1
-#define CY_CFG_SYSCLK_CLKHF0_FREQ_MHZ 144UL
+#define CY_CFG_SYSCLK_CLKHF0_FREQ_MHZ 50UL
 #define CY_CFG_SYSCLK_CLKHF0_CLKPATH CY_SYSCLK_CLKHF_IN_CLKPATH1
 #define CY_CFG_SYSCLK_CLKHF2_ENABLED 1
 #define CY_CFG_SYSCLK_CLKHF2_FREQ_MHZ 100UL
@@ -77,9 +77,9 @@ static const cy_stc_fll_manual_config_t srss_0_clock_0_fll_0_fllConfig =
 };
 static const cy_stc_pll_manual_config_t srss_0_clock_0_pll_0_pllConfig = 
 {
-	.feedbackDiv = 36,
+	.feedbackDiv = 25,
 	.referenceDiv = 1,
-	.outputDiv = 2,
+	.outputDiv = 4,
 	.lfMode = false,
 	.outputMode = CY_SYSCLK_FLLPLL_OUTPUT_AUTO,
 };
@@ -148,7 +148,7 @@ __STATIC_INLINE void Cy_SysClk_ClkPath4Init()
 }
 __STATIC_INLINE void Cy_SysClk_ClkPeriInit()
 {
-    Cy_SysClk_ClkPeriSetDivider(1U);
+    Cy_SysClk_ClkPeriSetDivider(0U);
 }
 __STATIC_INLINE void Cy_SysClk_Pll0Init()
 {

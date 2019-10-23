@@ -24,7 +24,7 @@
 
 #include "cycfg_peripherals.h"
 
-const cy_stc_sysanalog_config_t pass_0_aref_0_config = 
+const cy_stc_sysanalog_config_t AREF_config = 
 {
 	.startup = CY_SYSANALOG_STARTUP_FAST,
 	.iztat = CY_SYSANALOG_IZTAT_SOURCE_LOCAL,
@@ -37,7 +37,7 @@ const cy_stc_sar_config_t SAR_config =
 	.sampleCtrl = (uint32_t) SAR_SAMPLE,
 	.sampleTime01 = (4UL << CY_SAR_SAMPLE_TIME0_SHIFT) | (4UL << CY_SAR_SAMPLE_TIME1_SHIFT),
 	.sampleTime23 = (2UL << CY_SAR_SAMPLE_TIME2_SHIFT) | (2UL << CY_SAR_SAMPLE_TIME3_SHIFT),
-	.rangeThres = (0UL << CY_SAR_RANGE_HIGH_SHIFT) | (200UL << CY_SAR_RANGE_LOW_SHIFT),
+	.rangeThres = (3584UL << CY_SAR_RANGE_HIGH_SHIFT) | (512UL << CY_SAR_RANGE_LOW_SHIFT),
 	.rangeCond = CY_SAR_RANGE_COND_BELOW,
 	.chanEn = 3UL,
 	.chanConfig = {(uint32_t) SAR_CH0_CONFIG, (uint32_t) SAR_CH1_CONFIG, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL},
