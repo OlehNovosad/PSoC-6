@@ -72,11 +72,11 @@ const cy_stc_gpio_pin_config_t PIN_SW_config =
 	.vrefSel = 0UL,
 	.vohSel = 0UL,
 };
-const cy_stc_gpio_pin_config_t ioss_0_port_10_pin_0_config = 
+const cy_stc_gpio_pin_config_t THERM_VSS_config = 
 {
-	.outVal = 1,
-	.driveMode = CY_GPIO_DM_ANALOG,
-	.hsiom = ioss_0_port_10_pin_0_HSIOM,
+	.outVal = 0,
+	.driveMode = CY_GPIO_DM_STRONG,
+	.hsiom = THERM_VSS_HSIOM,
 	.intEdge = CY_GPIO_INTR_DISABLE,
 	.intMask = 0UL,
 	.vtrip = CY_GPIO_VTRIP_CMOS,
@@ -120,11 +120,11 @@ const cy_stc_gpio_pin_config_t ioss_0_port_10_pin_2_config =
 	.vrefSel = 0UL,
 	.vohSel = 0UL,
 };
-const cy_stc_gpio_pin_config_t ioss_0_port_10_pin_3_config = 
+const cy_stc_gpio_pin_config_t THERM_VDD_config = 
 {
 	.outVal = 1,
-	.driveMode = CY_GPIO_DM_ANALOG,
-	.hsiom = ioss_0_port_10_pin_3_HSIOM,
+	.driveMode = CY_GPIO_DM_STRONG,
+	.hsiom = THERM_VDD_HSIOM,
 	.intEdge = CY_GPIO_INTR_DISABLE,
 	.intMask = 0UL,
 	.vtrip = CY_GPIO_VTRIP_CMOS,
@@ -402,13 +402,13 @@ void init_cycfg_pins(void)
 
 	Cy_GPIO_Pin_Init(PIN_SW_PORT, PIN_SW_PIN, &PIN_SW_config);
 
-	Cy_GPIO_Pin_Init(ioss_0_port_10_pin_0_PORT, ioss_0_port_10_pin_0_PIN, &ioss_0_port_10_pin_0_config);
+	Cy_GPIO_Pin_Init(THERM_VSS_PORT, THERM_VSS_PIN, &THERM_VSS_config);
 
 	Cy_GPIO_Pin_Init(ioss_0_port_10_pin_1_PORT, ioss_0_port_10_pin_1_PIN, &ioss_0_port_10_pin_1_config);
 
 	Cy_GPIO_Pin_Init(ioss_0_port_10_pin_2_PORT, ioss_0_port_10_pin_2_PIN, &ioss_0_port_10_pin_2_config);
 
-	Cy_GPIO_Pin_Init(ioss_0_port_10_pin_3_PORT, ioss_0_port_10_pin_3_PIN, &ioss_0_port_10_pin_3_config);
+	Cy_GPIO_Pin_Init(THERM_VDD_PORT, THERM_VDD_PIN, &THERM_VDD_config);
 
 	Cy_GPIO_Pin_Init(ioss_0_port_12_pin_1_PORT, ioss_0_port_12_pin_1_PIN, &ioss_0_port_12_pin_1_config);
 

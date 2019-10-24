@@ -27,6 +27,7 @@ cy_en_sd_host_card_type_t cardType;
 cy_en_sd_host_card_capacity_t cardCapacity;
 cy_stc_sd_host_write_read_config_t data;
 cy_en_sd_host_status_t ret;
+cy_en_sar_status_t status;
 
 uint32_t rca;
 
@@ -158,7 +159,7 @@ int main(void)
 	//Set up RTC
 	Cy_RTC_Init(&RTC_config);
 
-	//Set yp System Analog Reference Block
+	//Set up System Analog Reference Block
 	cy_en_sysanalog_status_t status_aref;
 	status_aref = Cy_SysAnalog_Init(&Cy_SysAnalog_Fast_Local);
 	Cy_SysAnalog_Enable();
@@ -166,7 +167,7 @@ int main(void)
 	//Set up SAR ADC
 	Cy_SAR_Init(SAR_HW, &SAR_config);
 	Cy_SAR_Enable(SAR_HW);
-	Cy_SAR_StartConvert(SAR_HW, CY_SAR_START_CONVERT_CONTINUOUS);
+	//Cy_SAR_StartConvert(SAR_HW, CY_SAR_START_CONVERT_CONTINUOUS);
 
 	//Set up button interrupt
 	Cy_SysInt_Init(&switch_intr_config, Isr_switch);
@@ -272,6 +273,20 @@ char * ThermistorInfo(char * terminfo){
 
 	int16_t countThermistor, countReference;
 
+	            /* Initiate a single (one shot) scan. */
+	Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_SINGLE_SHOT);
+
+	while(1)
+	{
+	status = Cy_SAR_IsEndConversion(SAR, CY_SAR_RETURN_STATUS); /* Query end of conversion status. */
+	   if (CY_SAR_SUCCESS == status)
+		{
+
+			break;
+
+		}
+	}
+
 	//Getting values from channels.
 	countReference = Cy_SAR_GetResult16(SAR, 0);
 	countThermistor = Cy_SAR_GetResult16(SAR, 1);
@@ -281,13 +296,13 @@ char * ThermistorInfo(char * terminfo){
 	v2 = Cy_SAR_CountsTo_Volts(SAR_HW, 1, countThermistor);
 
 	//Getting the resistance across the thermistor.
-	uint32 resT = Thermistor_GetResistance(countReference, countThermistor);
+	uint32 resT = Thermistor_GetResistance(countThermistor, countReference);
 
 	//Counting temperature in Celsius.
 	float temperature = (float)Thermistor_GetTemperature(resT) / 100.0;
 
 	//Print out the voltages and temperature.
-	printf("<v1 = %.3f v2 = %.3f T = %.3f%c>\r\n", v1, v2, temperature_sw == true ? (temperature) : FAHRENHEIT(temperature),
+	printf("<resT = %d v1 = %.5f v2 = %.5f T = %.3f%c>\r\n", resT, v1, v2, temperature_sw == true ? (temperature) : FAHRENHEIT(temperature),
 			temperature_sw == true ? 'C' : 'F');
 
 	// Recording the temperature into char array.

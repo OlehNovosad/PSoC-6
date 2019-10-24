@@ -49,9 +49,9 @@
 *        Function Prototypes
 ***************************************/
 
-uint32 Thermistor_GetResistance(int16 vReference, int16 vThermistor)
-                                      ;
-int16 Thermistor_GetTemperature(uint32 resT) ;
+uint32 Thermistor_GetResistance(int16 vReference, int16 vThermistor);
+
+int16 Thermistor_GetTemperature(uint32 resT);
 
 
 /***************************************

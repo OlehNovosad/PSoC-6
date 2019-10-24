@@ -18,6 +18,24 @@
 
 #include "Thermistor.h"
 
+/* ADC channels used to measure reference and thermistor voltages */
+#define REFERENCE_CHANNEL   (uint32_t)(0x00u)
+#define THERMISTOR_CHANNEL  (uint32_t)(0x01u)
+
+/* Reference resistor in series with the thermistor is of 10 KOhm */
+#define R_REFERENCE         (float)(10000)
+
+/* Beta constant of this thermistor is 3380 Kelvin. See the thermistor
+   (NCP18XH103F03RB) data sheet for more details. */
+#define B_CONSTANT          (float)(3380)
+
+/* Resistance of the thermistor is 10K at 25 degrees C (from data sheet)
+   Therefore R0 = 10000 Ohm, and T0 = 298.15 Kelvin, which gives
+   R_INFINITY = R0 e^(-B_CONSTANT / T0) = 0.1192855 */
+#define R_INFINITY          (float)(0.1192855)
+
+/* Zero Kelvin in degree C */
+#define ABSOLUTE_ZERO       (float)(-273.15)
 
 /*******************************************************************************
 * Function Name: Thermistor_GetResistance

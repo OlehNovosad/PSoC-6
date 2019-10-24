@@ -61,15 +61,16 @@ extern "C" {
 #endif
 #define PIN_SW_HSIOM ioss_0_port_0_pin_4_HSIOM
 #define PIN_SW_IRQ ioss_interrupts_gpio_0_IRQn
-#define ioss_0_port_10_pin_0_PORT GPIO_PRT10
-#define ioss_0_port_10_pin_0_PIN 0U
-#define ioss_0_port_10_pin_0_NUM 0U
-#define ioss_0_port_10_pin_0_DRIVEMODE CY_GPIO_DM_ANALOG
-#define ioss_0_port_10_pin_0_INIT_DRIVESTATE 1
+#define THERM_VSS_PORT GPIO_PRT10
+#define THERM_VSS_PIN 0U
+#define THERM_VSS_NUM 0U
+#define THERM_VSS_DRIVEMODE CY_GPIO_DM_STRONG
+#define THERM_VSS_INIT_DRIVESTATE 0
 #ifndef ioss_0_port_10_pin_0_HSIOM
 	#define ioss_0_port_10_pin_0_HSIOM HSIOM_SEL_GPIO
 #endif
-#define ioss_0_port_10_pin_0_IRQ ioss_interrupts_gpio_10_IRQn
+#define THERM_VSS_HSIOM ioss_0_port_10_pin_0_HSIOM
+#define THERM_VSS_IRQ ioss_interrupts_gpio_10_IRQn
 #define ioss_0_port_10_pin_1_PORT GPIO_PRT10
 #define ioss_0_port_10_pin_1_PIN 1U
 #define ioss_0_port_10_pin_1_NUM 1U
@@ -88,15 +89,16 @@ extern "C" {
 	#define ioss_0_port_10_pin_2_HSIOM HSIOM_SEL_GPIO
 #endif
 #define ioss_0_port_10_pin_2_IRQ ioss_interrupts_gpio_10_IRQn
-#define ioss_0_port_10_pin_3_PORT GPIO_PRT10
-#define ioss_0_port_10_pin_3_PIN 3U
-#define ioss_0_port_10_pin_3_NUM 3U
-#define ioss_0_port_10_pin_3_DRIVEMODE CY_GPIO_DM_ANALOG
-#define ioss_0_port_10_pin_3_INIT_DRIVESTATE 1
+#define THERM_VDD_PORT GPIO_PRT10
+#define THERM_VDD_PIN 3U
+#define THERM_VDD_NUM 3U
+#define THERM_VDD_DRIVEMODE CY_GPIO_DM_STRONG
+#define THERM_VDD_INIT_DRIVESTATE 1
 #ifndef ioss_0_port_10_pin_3_HSIOM
 	#define ioss_0_port_10_pin_3_HSIOM HSIOM_SEL_GPIO
 #endif
-#define ioss_0_port_10_pin_3_IRQ ioss_interrupts_gpio_10_IRQn
+#define THERM_VDD_HSIOM ioss_0_port_10_pin_3_HSIOM
+#define THERM_VDD_IRQ ioss_interrupts_gpio_10_IRQn
 #define ioss_0_port_12_pin_1_PORT GPIO_PRT12
 #define ioss_0_port_12_pin_1_PIN 1U
 #define ioss_0_port_12_pin_1_NUM 1U
@@ -249,10 +251,10 @@ extern "C" {
 extern const cy_stc_gpio_pin_config_t ioss_0_port_0_pin_0_config;
 extern const cy_stc_gpio_pin_config_t ioss_0_port_0_pin_1_config;
 extern const cy_stc_gpio_pin_config_t PIN_SW_config;
-extern const cy_stc_gpio_pin_config_t ioss_0_port_10_pin_0_config;
+extern const cy_stc_gpio_pin_config_t THERM_VSS_config;
 extern const cy_stc_gpio_pin_config_t ioss_0_port_10_pin_1_config;
 extern const cy_stc_gpio_pin_config_t ioss_0_port_10_pin_2_config;
-extern const cy_stc_gpio_pin_config_t ioss_0_port_10_pin_3_config;
+extern const cy_stc_gpio_pin_config_t THERM_VDD_config;
 extern const cy_stc_gpio_pin_config_t ioss_0_port_12_pin_1_config;
 extern const cy_stc_gpio_pin_config_t ioss_0_port_12_pin_2_config;
 extern const cy_stc_gpio_pin_config_t ioss_0_port_12_pin_4_config;
