@@ -4,7 +4,7 @@ PSoC-6 (Cypress test)
 
 Requirements
 -------------------
-Tool: ModusToolbox IDE
+Tool: ModusToolbox IDE <br />
 Programming Language: C
 
 Supported Kit
@@ -19,3 +19,5 @@ Detail overview
 --------------------
 In the beginning, the program checks the date and time and prints it in the terminal also reads temperature from thermistor and print it in the terminal.These actions repeat every second and every 30 sec. this information is burned to the SD card during the program running. Temperature is set in Celsius by default but you can change it to Fahrenheit by pushing the button (Pin: 0.4).
 
+Attention
+----------
