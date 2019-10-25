@@ -21,7 +21,3 @@ In the beginning, the program checks the date and time and prints it in the term
 
 Attention
 ----------
-Apply voltage to the thermistor as shown in photo.
-<p align="center">
-  <img src="E:\Programming\Cypress\PSoC6\CypressTest_mainapp\Photo\PSoC_6.jpg" width="500" title="voltage to ther thermistor">
-</p>
