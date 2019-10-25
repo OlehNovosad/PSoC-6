@@ -23,5 +23,5 @@ Attention
 ----------
 Apply voltage to the thermistor as shown in photo.
 <p align="center">
-  <img src="E:\Programming\Cypress\PSoC6\CypressTest_mainapp\Photo\PSoC_6.jpg" width="350" title="voltage to ther thermistor">
+  <img src="E:\Programming\Cypress\PSoC6\CypressTest_mainapp\Photo\PSoC_6.jpg" width="500" title="voltage to ther thermistor">
 </p>
