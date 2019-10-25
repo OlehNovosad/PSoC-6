@@ -302,7 +302,7 @@ char * ThermistorInfo(char * terminfo){
 	float temperature = (float)Thermistor_GetTemperature(resT) / 100.0;
 
 	//Print out the voltages and temperature.
-	printf("<resT = %d v1 = %.5f v2 = %.5f T = %.3f%c>\r\n", resT, v1, v2, temperature_sw == true ? (temperature) : FAHRENHEIT(temperature),
+	printf("<resT = %lu v1 = %.5f v2 = %.5f T = %.3f%c>\r\n", resT, v1, v2, temperature_sw == true ? (temperature) : FAHRENHEIT(temperature),
 			temperature_sw == true ? 'C' : 'F');
 
 	// Recording the temperature into char array.
