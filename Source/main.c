@@ -273,7 +273,7 @@ char * ThermistorInfo(char * terminfo){
 
 	int16_t countThermistor, countReference;
 
-	            /* Initiate a single (one shot) scan. */
+	/* Initiate a single (one shot) scan. */
 	Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_SINGLE_SHOT);
 
 	while(1)
@@ -281,22 +281,20 @@ char * ThermistorInfo(char * terminfo){
 	status = Cy_SAR_IsEndConversion(SAR, CY_SAR_RETURN_STATUS); /* Query end of conversion status. */
 	   if (CY_SAR_SUCCESS == status)
 		{
-
 			break;
-
 		}
 	}
 
 	//Getting values from channels.
-	countReference = Cy_SAR_GetResult16(SAR, 0);
-	countThermistor = Cy_SAR_GetResult16(SAR, 1);
+	countThermistor = Cy_SAR_GetResult16(SAR, 0);
+	countReference = Cy_SAR_GetResult16(SAR, 1);
 
 	//Getting values of voltages.
-	v1 = Cy_SAR_CountsTo_Volts(SAR_HW, 0, countReference);
-	v2 = Cy_SAR_CountsTo_Volts(SAR_HW, 1, countThermistor);
+	v1 = Cy_SAR_CountsTo_Volts(SAR_HW, 0, countThermistor);
+	v2 = Cy_SAR_CountsTo_Volts(SAR_HW, 1, countReference);
 
 	//Getting the resistance across the thermistor.
-	uint32 resT = Thermistor_GetResistance(countThermistor, countReference);
+	uint32 resT = Thermistor_GetResistance(countReference, countThermistor);
 
 	//Counting temperature in Celsius.
 	float temperature = (float)Thermistor_GetTemperature(resT) / 100.0;

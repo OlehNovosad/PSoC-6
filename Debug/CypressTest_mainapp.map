@@ -7392,36 +7392,36 @@ OUTPUT(CypressTest_mainapp.elf elf32-littlearm)
  .debug_macro   0x000257c6      0x34c E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
  .debug_macro   0x00025b12      0x358 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
 
-.debug_line     0x00000000    0x121c0
+.debug_line     0x00000000    0x121be
  .debug_line    0x00000000      0xa74 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
  .debug_line    0x00000a74       0xc7 ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/gcc/startup_psoc6_02_cm4.o
  .debug_line    0x00000b3b      0x89c ./psoc6sw-1.1/components/psoc6pdl/devices/psoc6/startup/system_psoc6_cm4.o
- .debug_line    0x000013d7      0xbc1 ./Source/main.o
- .debug_line    0x00001f98      0x8d3 ./Source/stdio_user.o
- .debug_line    0x0000286b      0x8e1 ./GeneratedSource/Thermistor.o
- .debug_line    0x0000314c      0x847 ./GeneratedSource/cycfg.o
- .debug_line    0x00003993      0x7b3 ./GeneratedSource/cycfg_clocks.o
- .debug_line    0x00004146      0x7ff ./GeneratedSource/cycfg_peripherals.o
- .debug_line    0x00004945      0x79c ./GeneratedSource/cycfg_pins.o
- .debug_line    0x000050e1      0x8c8 ./GeneratedSource/cycfg_platform.o
- .debug_line    0x000059a9      0x642 ./GeneratedSource/cycfg_routing.o
- .debug_line    0x00005feb       0xac E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib_gcc.o)
- .debug_line    0x00006097      0x4f2 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
- .debug_line    0x00006589      0x975 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
- .debug_line    0x00006efe      0x9da E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
- .debug_line    0x000078d8      0x978 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
- .debug_line    0x00008250     0x1240 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
- .debug_line    0x00009490      0xb59 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
- .debug_line    0x00009fe9      0x9a9 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
- .debug_line    0x0000a992      0xf98 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
- .debug_line    0x0000b92a     0x18c7 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sd_host.o)
- .debug_line    0x0000d1f1      0x7ce E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
- .debug_line    0x0000d9bf      0xfb4 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
- .debug_line    0x0000e973      0x7cb E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
- .debug_line    0x0000f13e      0x942 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
- .debug_line    0x0000fa80      0xf5e E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
- .debug_line    0x000109de      0x7f4 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
- .debug_line    0x000111d2      0xfee E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
+ .debug_line    0x000013d7      0xbbf ./Source/main.o
+ .debug_line    0x00001f96      0x8d3 ./Source/stdio_user.o
+ .debug_line    0x00002869      0x8e1 ./GeneratedSource/Thermistor.o
+ .debug_line    0x0000314a      0x847 ./GeneratedSource/cycfg.o
+ .debug_line    0x00003991      0x7b3 ./GeneratedSource/cycfg_clocks.o
+ .debug_line    0x00004144      0x7ff ./GeneratedSource/cycfg_peripherals.o
+ .debug_line    0x00004943      0x79c ./GeneratedSource/cycfg_pins.o
+ .debug_line    0x000050df      0x8c8 ./GeneratedSource/cycfg_platform.o
+ .debug_line    0x000059a7      0x642 ./GeneratedSource/cycfg_routing.o
+ .debug_line    0x00005fe9       0xac E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib_gcc.o)
+ .debug_line    0x00006095      0x4f2 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_device.o)
+ .debug_line    0x00006587      0x975 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_gpio.o)
+ .debug_line    0x00006efc      0x9da E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_pipe.o)
+ .debug_line    0x000078d6      0x978 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_sema.o)
+ .debug_line    0x0000824e     0x1240 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_rtc.o)
+ .debug_line    0x0000948e      0xb59 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sar.o)
+ .debug_line    0x00009fe7      0x9a9 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_common.o)
+ .debug_line    0x0000a990      0xf98 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_scb_uart.o)
+ .debug_line    0x0000b928     0x18c7 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sd_host.o)
+ .debug_line    0x0000d1ef      0x7ce E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysanalog.o)
+ .debug_line    0x0000d9bd      0xfb4 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysclk.o)
+ .debug_line    0x0000e971      0x7cb E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_sysint.o)
+ .debug_line    0x0000f13c      0x942 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syslib.o)
+ .debug_line    0x0000fa7e      0xf5e E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_syspm.o)
+ .debug_line    0x000109dc      0x7f4 E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_ipc_drv.o)
+ .debug_line    0x000111d0      0xfee E:/Programming/Cypress/PSoC6Test/psoc6pdl_Cortex-M4/Debug/libpsoc6pdl_Cortex-M4.a(cy_prot.o)
 
 .debug_str      0x00000000    0xe2b8a
  .debug_str     0x00000000    0xba977 ./psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.o
