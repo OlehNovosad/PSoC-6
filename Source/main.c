@@ -135,14 +135,15 @@ void SD_Host_User_Isr()
     /* Add the use code here. */
 }
 
+
+#define ROW		50
+#define COLS	50
+
 void PrintDateAndTime(int frequency);
 
 char * ThermistorInfo(char * terminfo);
 
-bool SDHC_Read_Write(char * dateandtime);
-
-#define ROW		50
-#define COLS	50
+bool SDHC_Read_Write(char * dateandtime, char (*info)[COLS]);
 
 void Test(char * dateandtime, char info [][COLS]);
 
@@ -268,18 +269,18 @@ void PrintDateAndTime(int frequency){
 		//Recording the information from thermistor into char array.
 		strncat(dateandtime, terminfo, 20);
 
-		if(secPrev % frequency == 0){
-			printf("TEST:\r\n");
-			Test(dateandtime, info);
-		}
+//		if(secPrev % frequency == 0){
+//			printf("TEST:\r\n");
+//			Test(dateandtime, info);
+//		}
 
 		// If modulo division is equal to zero, then information is burning to sd card.
-//		if(secPrev % frequency == 0){
-//			if(SDHC_Read_Write(dateandtime)){
-//				Cy_GPIO_Write(Pin_Led_PORT,Pin_Led_NUM,0);
-//				Cy_SysLib_Delay(500);
-//			}
-//		}
+		if(secPrev % frequency == 0){
+			if(SDHC_Read_Write(dateandtime, info)){
+				Cy_GPIO_Write(Pin_Led_PORT,Pin_Led_NUM,0);
+				Cy_SysLib_Delay(500);
+			}
+		}
 	}
 }
 
@@ -358,7 +359,23 @@ char * ThermistorInfo(char * terminfo){
 *
 *******************************************************************************/
 
-bool SDHC_Read_Write(char * dateandtime){
+bool SDHC_Read_Write(char * dateandtime, char (*info)[COLS]){
+
+	static int row = 0;
+
+	for (int i = 0; i < COLS; ++i) {
+		info[row][i] = dateandtime[i];
+	}
+
+	for (int i = 0; i < row; ++i) {
+		int j = 0;
+		while(info[i][j] != '\0'){
+			printf("%c", info[i][j++]);
+		}
+	}
+
+	row++;
+
 	//Initialization of SDHC interruption
 	Cy_SysInt_Init(&sdHostIntrConfig, &SD_Host_User_Isr);
 	NVIC_EnableIRQ(SD_Host_INTR_NUM);
@@ -422,14 +439,28 @@ void Test(char * dateandtime, char (*info)[COLS]){
 	for (int i = 0; i < COLS; ++i) {
 		info[row][i] = dateandtime[i];
 	}
+
 	for (int i = 0; i < row; ++i) {
-		for (int j = 0; j < COLS; ++j) {
-			printf("%c", info[i][j]);
+		int j = 0;
+		while(info[i][j] != '\0'){
+			printf("%c", info[i][j++]);
 		}
-		printf("\r\n");
 	}
+
 	row++;
 }
+
+/*
+ * LINKED LIST TEST
+ * *******************************************************
+ * *******************************************************
+ * *******************************************************
+ * *******************************************************
+ * *******************************************************
+ * *******************************************************
+ * *******************************************************
+ * *******************************************************
+ */
 
 void show(Item item){
     printf("info: %s\n\r", item.info);
