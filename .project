@@ -27,6 +27,16 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>psoc6sw-1.1/components/psoc6mw/csdadc/cy_csdadc.c</name>
+			<type>1</type>
+			<locationURI>CY_SDK_INSTALL_DIR/libraries/psoc6sw-1.1/components/psoc6mw/csdadc/cy_csdadc.c</locationURI>
+		</link>
+		<link>
+			<name>psoc6sw-1.1/components/psoc6mw/csdadc/cy_csdadc.h</name>
+			<type>1</type>
+			<locationURI>CY_SDK_INSTALL_DIR/libraries/psoc6sw-1.1/components/psoc6mw/csdadc/cy_csdadc.h</locationURI>
+		</link>
+		<link>
 			<name>psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.c</name>
 			<type>1</type>
 			<locationURI>CY_SDK_INSTALL_DIR/libraries/psoc6sw-1.1/components/psoc6pdl/utilities/retarget_io/retarget.c</locationURI>

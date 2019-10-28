@@ -12,6 +12,7 @@
 #include "cy_sysint.h"
 #include "string.h"
 #include "stdbool.h"
+#include "List.h"
 #include "Thermistor.h"
 
 #define FAHRENHEIT(temperature)	(9.0/5.0 * temperature + 32.0)
@@ -140,6 +141,29 @@ char * ThermistorInfo(char * terminfo);
 
 bool SDHC_Read_Write(char * dateandtime);
 
+#define ROW		50
+#define COLS	50
+
+void Test(char * dateandtime, char info [][COLS]);
+
+void LinkedList();
+
+char * s_gets(char * string, int size){
+    char * ret_val;
+    char * find;
+
+    ret_val = fgets(string, size,stdin);
+    if (ret_val){
+        find = strchr(string, '\n');
+        if (find)
+            *find = '\0';
+        else
+            while (getchar() != '\n')
+                continue;
+    }
+    return ret_val;
+}
+
 int main(void)
 {
     /* Set up the device based on configurator selections */
@@ -176,6 +200,8 @@ int main(void)
 
     /* \x1b[2J\x1b[;H - ANSI ESC sequence for clear screen */
 	printf("\x1b[2J\x1b[;H");
+
+//	LinkedList();
 
     for(;;)
     {
@@ -216,6 +242,7 @@ void PrintDateAndTime(int frequency){
 	//Arrays for the information.
 	char dateandtime[CY_SD_HOST_BLOCK_SIZE];
 	char terminfo[CY_SD_HOST_BLOCK_SIZE];
+	char info[ROW][COLS];
 
 	/* Variable used to store previous second value */
 	static uint32_t secPrev = CY_RTC_MAX_SEC_OR_MIN + 1;
@@ -241,13 +268,18 @@ void PrintDateAndTime(int frequency){
 		//Recording the information from thermistor into char array.
 		strncat(dateandtime, terminfo, 20);
 
-		// If modulo division is equal to zero, then information is burning to sd card.
 		if(secPrev % frequency == 0){
-			if(SDHC_Read_Write(dateandtime)){
-				Cy_GPIO_Write(Pin_Led_PORT,Pin_Led_NUM,0);
-				Cy_SysLib_Delay(500);
-			}
+			printf("TEST:\r\n");
+			Test(dateandtime, info);
 		}
+
+		// If modulo division is equal to zero, then information is burning to sd card.
+//		if(secPrev % frequency == 0){
+//			if(SDHC_Read_Write(dateandtime)){
+//				Cy_GPIO_Write(Pin_Led_PORT,Pin_Led_NUM,0);
+//				Cy_SysLib_Delay(500);
+//			}
+//		}
 	}
 }
 
@@ -300,7 +332,7 @@ char * ThermistorInfo(char * terminfo){
 	float temperature = (float)Thermistor_GetTemperature(resT) / 100.0;
 
 	//Print out the voltages and temperature.
-	printf("<resT = %lu v1 = %.5f v2 = %.5f T = %.3f%c>\r\n", resT, v1, v2, temperature_sw == true ? (temperature) : FAHRENHEIT(temperature),
+	printf("<resT = %d v1 = %.5f v2 = %.5f T = %.3f%c>\r\n", resT, v1, v2, temperature_sw == true ? (temperature) : FAHRENHEIT(temperature),
 			temperature_sw == true ? 'C' : 'F');
 
 	// Recording the temperature into char array.
@@ -380,6 +412,56 @@ bool SDHC_Read_Write(char * dateandtime){
 
 	printf("Info is written:\n\r");
 	puts(rxBuff);
+
 	return true;
+}
+
+void Test(char * dateandtime, char (*info)[COLS]){
+	static int row = 0;
+
+	for (int i = 0; i < COLS; ++i) {
+		info[row][i] = dateandtime[i];
+	}
+	for (int i = 0; i < row; ++i) {
+		for (int j = 0; j < COLS; ++j) {
+			printf("%c", info[i][j]);
+		}
+		printf("\r\n");
+	}
+	row++;
+}
+
+void show(Item item){
+    printf("info: %s\n\r", item.info);
+}
+
+void LinkedList(){
+	List list;
+	Item item;
+
+	InitializeList(&list);
+
+	puts("Enter the info:\r");
+	while (s_gets(item.info, MAX) && item.info[0] != '\0'){
+		while (getchar() != '\n')
+			continue;
+		if (AddItemList(item,&list) == false){
+			fprintf(stderr,"Oops.\n\r");
+			break;
+		}
+		if (ListIsFull(&list)){
+			puts("List is full\r");
+			break;
+		}
+		puts("Next info or empty line:\r");
+	}
+	if (ListIsEmpty(&list))
+		puts("No data was entered.\r");
+	else{
+		puts("List of info:\r");
+		Traverse(&list, show);
+	}
+	EmptyTheList(&list);
+	puts("Done!");
 }
 
